@@ -96,7 +96,8 @@ RUN \
     && corepack use $(sed -n 's/.*"packageManager": "\(.*\)".*/\1/p' package.json) \
     # Install the dependencies
     && pnpm i \
-    && pnpm add -D patch-package \ 
+    && pnpm add -D patch-package \
+    && export PATH="/app/node_modules/.bin:$PATH" \
     && pnpm list patch-package \
     # Add sharp and db migration dependencies
     && mkdir -p /deps \
