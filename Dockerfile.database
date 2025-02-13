@@ -96,6 +96,7 @@ RUN \
     && corepack use $(sed -n 's/.*"packageManager": "\(.*\)".*/\1/p' package.json) \
     # Install the dependencies
     && pnpm i \
+    && pnpm add -D patch-package \ 
     # Add sharp and db migration dependencies
     && mkdir -p /deps \
     && pnpm add sharp pg drizzle-orm --prefix /deps
