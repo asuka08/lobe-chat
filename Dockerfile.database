@@ -76,8 +76,6 @@ ENV NODE_OPTIONS="--max-old-space-size=8192"
 
 WORKDIR /app
 
-# 首先复制 patches 目录，这样 patch-package 可以找到补丁文件
-COPY patches ./patches/
 COPY package.json ./
 COPY .npmrc ./
 
