@@ -97,7 +97,6 @@ RUN \
     # Install the dependencies
     && pnpm i \
     && pnpm add -D patch-package \ 
-    && pnpm list patch-package \
     # Add sharp and db migration dependencies
     && mkdir -p /deps \
     && pnpm add sharp pg drizzle-orm --prefix /deps
