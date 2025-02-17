@@ -5,6 +5,7 @@ import Image, { ImageProps } from 'next/image';
 import { ReactNode, forwardRef, memo } from 'react';
 import { Flexbox, FlexboxProps } from 'react-layout-kit';
 
+import { Avatar, List, ListItemProps } from '@lobehub/ui';
 import { BRANDING_LOGO_URL, BRANDING_NAME } from '@/const/branding';
 
 const useStyles = createStyles(({ css }) => {
@@ -114,6 +115,12 @@ const CustomLogo = memo<LobeChatProps>(({ extra, size = 32, className, style, ty
     <Flexbox align={'center'} className={className} flex={'none'} horizontal {...rest}>
       {logoComponent}
       <Divider size={extraSize} style={{ color: theme.colorFill }} />
+      {/* <Avatar
+        avatar={`/icons/icon-192x192.maskable.png`}
+        background={""}
+        size={40}
+        title={"333"}
+      /> */}
       <div className={styles.extraTitle} style={{ fontSize: extraSize }}>
         {extra}
       </div>

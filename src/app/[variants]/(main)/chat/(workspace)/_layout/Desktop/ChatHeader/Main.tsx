@@ -67,7 +67,7 @@ const Main = memo(() => {
         />
       )}
       <Avatar
-        avatar={avatar}
+        avatar={`/icons/icon-192x192.maskable.png`}
         background={backgroundColor}
         onClick={() => openChatSettings()}
         size={40}
