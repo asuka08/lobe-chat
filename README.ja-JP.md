@@ -122,47 +122,47 @@ LobeChat の継続的な開発において、AI 会話サービスを提供す�
 
 以下のモデルサービスプロバイダーをサポートしています：
 
-<!-- PROVIDER LIST -->
+<!-- PROVIDER LIST --> 
 
-- **[OpenAI](https://lobechat.com/discover/provider/openai)**: OpenAI は、世界をリードする人工知能研究機関であり、GPT シリーズなどのモデルを開発し、自然言語処理の最前線を推進しています。OpenAI は、革新と効率的な AI ソリューションを通じて、さまざまな業界を変革することに取り組んでいます。彼らの製品は、顕著な性能と経済性を持ち、研究、ビジネス、革新アプリケーションで広く使用されています。
-- **[Ollama](https://lobechat.com/discover/provider/ollama)**: Ollama が提供するモデルは、コード生成、数学演算、多言語処理、対話インタラクションなどの分野を広くカバーし、企業向けおよびローカライズされた展開の多様なニーズに対応しています。
-- **[Anthropic](https://lobechat.com/discover/provider/anthropic)**: Anthropic は、人工知能の研究と開発に特化した企業であり、Claude 3.5 Sonnet、Claude 3 Sonnet、Claude 3 Opus、Claude 3 Haiku などの先進的な言語モデルを提供しています。これらのモデルは、知性、速度、コストの理想的なバランスを実現しており、企業向けのワークロードから迅速な応答が求められるさまざまなアプリケーションシーンに適しています。Claude 3.5 Sonnet は最新のモデルであり、複数の評価で優れたパフォーマンスを示し、高いコストパフォーマンスを維持しています。
-- **[Bedrock](https://lobechat.com/discover/provider/bedrock)**: Bedrock は、Amazon AWS が提供するサービスで、企業に先進的な AI 言語モデルと視覚モデルを提供することに特化しています。そのモデルファミリーには、Anthropic の Claude シリーズや Meta の Llama 3.1 シリーズなどが含まれ、軽量から高性能までのさまざまな選択肢を提供し、テキスト生成、対話、画像処理などの多様なタスクをサポートし、異なる規模とニーズの企業アプリケーションに適しています。
-- **[Google](https://lobechat.com/discover/provider/google)**: Google の Gemini シリーズは、Google DeepMind によって開発された最先端で汎用的な AI モデルであり、多モーダル設計に特化しており、テキスト、コード、画像、音声、動画のシームレスな理解と処理をサポートします。データセンターからモバイルデバイスまでのさまざまな環境に適しており、AI モデルの効率と適用範囲を大幅に向上させています。
-- **[DeepSeek](https://lobechat.com/discover/provider/deepseek)**: DeepSeek は、人工知能技術の研究と応用に特化した企業であり、最新のモデル DeepSeek-V2.5 は、汎用対話とコード処理能力を融合させ、人間の好みの整合、ライティングタスク、指示の遵守などの面で顕著な向上を実現しています。
-- **[HuggingFace](https://lobechat.com/discover/provider/huggingface)**: HuggingFace Inference API は、数千のモデルをさまざまなタスクに対して探索するための迅速かつ無料の方法を提供します。新しいアプリケーションのプロトタイプを作成している場合でも、機械学習の機能を試している場合でも、この API は複数の分野の高性能モデルに即座にアクセスできるようにします。
-- **[OpenRouter](https://lobechat.com/discover/provider/openrouter)**: OpenRouter は、OpenAI、Anthropic、LLaMA などのさまざまな最先端の大規模モデルインターフェースを提供するサービスプラットフォームであり、多様な開発と応用のニーズに適しています。ユーザーは、自身のニーズに応じて最適なモデルと価格を柔軟に選択し、AI 体験の向上を支援します。
-- **[Cloudflare Workers AI](https://lobechat.com/discover/provider/cloudflare)**: Cloudflare のグローバルネットワーク上で、サーバーレス GPU によって駆動される機械学習モデルを実行します。
-- **[GitHub](https://lobechat.com/discover/provider/github)**: GitHub モデルを使用することで、開発者は AI エンジニアになり、業界をリードする AI モデルを使って構築できます。
+- **[OpenAI](https://lobechat.com/discover/provider/openai)**: OpenAIは、世界をリードする人工知能研究機関であり、GPTシリーズなどのモデルを開発し、自然言語処理の最前線を推進しています。OpenAIは、革新と効率的なAIソリューションを通じて、さまざまな業界を変革することに取り組んでいます。彼らの製品は、顕著な性能と経済性を持ち、研究、ビジネス、革新アプリケーションで広く使用されています。
+- **[Ollama](https://lobechat.com/discover/provider/ollama)**: Ollamaが提供するモデルは、コード生成、数学演算、多言語処理、対話インタラクションなどの分野を広くカバーし、企業向けおよびローカライズされた展開の多様なニーズに対応しています。
+- **[Anthropic](https://lobechat.com/discover/provider/anthropic)**: Anthropicは、人工知能の研究と開発に特化した企業であり、Claude 3.5 Sonnet、Claude 3 Sonnet、Claude 3 Opus、Claude 3 Haikuなどの先進的な言語モデルを提供しています。これらのモデルは、知性、速度、コストの理想的なバランスを実現しており、企業向けのワークロードから迅速な応答が求められるさまざまなアプリケーションシーンに適しています。Claude 3.5 Sonnetは最新のモデルであり、複数の評価で優れたパフォーマンスを示し、高いコストパフォーマンスを維持しています。
+- **[Bedrock](https://lobechat.com/discover/provider/bedrock)**: Bedrockは、Amazon AWSが提供するサービスで、企業に先進的なAI言語モデルと視覚モデルを提供することに特化しています。そのモデルファミリーには、AnthropicのClaudeシリーズやMetaのLlama 3.1シリーズなどが含まれ、軽量から高性能までのさまざまな選択肢を提供し、テキスト生成、対話、画像処理などの多様なタスクをサポートし、異なる規模とニーズの企業アプリケーションに適しています。
+- **[Google](https://lobechat.com/discover/provider/google)**: GoogleのGeminiシリーズは、Google DeepMindによって開発された最先端で汎用的なAIモデルであり、多モーダル設計に特化しており、テキスト、コード、画像、音声、動画のシームレスな理解と処理をサポートします。データセンターからモバイルデバイスまでのさまざまな環境に適しており、AIモデルの効率と適用範囲を大幅に向上させています。
+- **[DeepSeek](https://lobechat.com/discover/provider/deepseek)**: DeepSeekは、人工知能技術の研究と応用に特化した企業であり、最新のモデルDeepSeek-V2.5は、汎用対話とコード処理能力を融合させ、人間の好みの整合、ライティングタスク、指示の遵守などの面で顕著な向上を実現しています。
+- **[HuggingFace](https://lobechat.com/discover/provider/huggingface)**: HuggingFace Inference APIは、数千のモデルをさまざまなタスクに対して探索するための迅速かつ無料の方法を提供します。新しいアプリケーションのプロトタイプを作成している場合でも、機械学習の機能を試している場合でも、このAPIは複数の分野の高性能モデルに即座にアクセスできるようにします。
+- **[OpenRouter](https://lobechat.com/discover/provider/openrouter)**: OpenRouterは、OpenAI、Anthropic、LLaMAなどのさまざまな最先端の大規模モデルインターフェースを提供するサービスプラットフォームであり、多様な開発と応用のニーズに適しています。ユーザーは、自身のニーズに応じて最適なモデルと価格を柔軟に選択し、AI体験の向上を支援します。
+- **[Cloudflare Workers AI](https://lobechat.com/discover/provider/cloudflare)**: Cloudflareのグローバルネットワーク上で、サーバーレスGPUによって駆動される機械学習モデルを実行します。
+- **[GitHub](https://lobechat.com/discover/provider/github)**: GitHubモデルを使用することで、開発者はAIエンジニアになり、業界をリードするAIモデルを使って構築できます。
 
 <details><summary><kbd>See more providers (+26)</kbd></summary>
 
-- **[Novita](https://lobechat.com/discover/provider/novita)**: Novita AI は、さまざまな大規模言語モデルと AI 画像生成の API サービスを提供するプラットフォームであり、柔軟で信頼性が高く、コスト効率に優れています。Llama3、Mistral などの最新のオープンソースモデルをサポートし、生成的 AI アプリケーションの開発に向けた包括的でユーザーフレンドリーかつ自動スケーリングの API ソリューションを提供し、AI スタートアップの急成長を支援します。
-- **[Together AI](https://lobechat.com/discover/provider/togetherai)**: Together AI は、革新的な AI モデルを通じて先進的な性能を実現することに取り組んでおり、迅速なスケーリングサポートや直感的な展開プロセスを含む広範なカスタマイズ能力を提供し、企業のさまざまなニーズに応えています。
-- **[Fireworks AI](https://lobechat.com/discover/provider/fireworksai)**: Fireworks AI は、先進的な言語モデルサービスのリーダーであり、機能呼び出しと多モーダル処理に特化しています。最新のモデル Firefunction V2 は Llama-3 に基づいており、関数呼び出し、対話、指示の遵守に最適化されています。視覚言語モデル FireLLaVA-13B は、画像とテキストの混合入力をサポートしています。他の注目すべきモデルには、Llama シリーズや Mixtral シリーズがあり、高効率の多言語指示遵守と生成サポートを提供しています。
-- **[Groq](https://lobechat.com/discover/provider/groq)**: Groq の LPU 推論エンジンは、最新の独立した大規模言語モデル（LLM）ベンチマークテストで卓越したパフォーマンスを示し、その驚異的な速度と効率で AI ソリューションの基準を再定義しています。Groq は、即時推論速度の代表であり、クラウドベースの展開で良好なパフォーマンスを発揮しています。
-- **[Perplexity](https://lobechat.com/discover/provider/perplexity)**: Perplexity は、先進的な対話生成モデルの提供者であり、さまざまな Llama 3.1 モデルを提供し、オンラインおよびオフラインアプリケーションをサポートし、特に複雑な自然言語処理タスクに適しています。
-- **[Mistral](https://lobechat.com/discover/provider/mistral)**: Mistral は、先進的な汎用、専門、研究型モデルを提供し、複雑な推論、多言語タスク、コード生成などの分野で広く使用されています。機能呼び出しインターフェースを通じて、ユーザーはカスタム機能を統合し、特定のアプリケーションを実現できます。
-- **[Ai21Labs](https://lobechat.com/discover/provider/ai21)**: AI21 Labs は企業向けに基盤モデルと人工知能システムを構築し、生成的人工知能の生産への応用を加速します。
-- **[Upstage](https://lobechat.com/discover/provider/upstage)**: Upstage は、さまざまなビジネスニーズに応じた AI モデルの開発に特化しており、Solar LLM や文書 AI を含み、人造一般知能（AGI）の実現を目指しています。Chat API を通じてシンプルな対話エージェントを作成し、機能呼び出し、翻訳、埋め込み、特定分野のアプリケーションをサポートします。
-- **[xAI](https://lobechat.com/discover/provider/xai)**: xAI は、人類の科学的発見を加速するための人工知能を構築することに専念している企業です。私たちの使命は、宇宙に対する共通の理解を促進することです。
+- **[Novita](https://lobechat.com/discover/provider/novita)**: Novita AIは、さまざまな大規模言語モデルとAI画像生成のAPIサービスを提供するプラットフォームであり、柔軟で信頼性が高く、コスト効率に優れています。Llama3、Mistralなどの最新のオープンソースモデルをサポートし、生成的AIアプリケーションの開発に向けた包括的でユーザーフレンドリーかつ自動スケーリングのAPIソリューションを提供し、AIスタートアップの急成長を支援します。
+- **[Together AI](https://lobechat.com/discover/provider/togetherai)**: Together AIは、革新的なAIモデルを通じて先進的な性能を実現することに取り組んでおり、迅速なスケーリングサポートや直感的な展開プロセスを含む広範なカスタマイズ能力を提供し、企業のさまざまなニーズに応えています。
+- **[Fireworks AI](https://lobechat.com/discover/provider/fireworksai)**: Fireworks AIは、先進的な言語モデルサービスのリーダーであり、機能呼び出しと多モーダル処理に特化しています。最新のモデルFirefunction V2はLlama-3に基づいており、関数呼び出し、対話、指示の遵守に最適化されています。視覚言語モデルFireLLaVA-13Bは、画像とテキストの混合入力をサポートしています。他の注目すべきモデルには、LlamaシリーズやMixtralシリーズがあり、高効率の多言語指示遵守と生成サポートを提供しています。
+- **[Groq](https://lobechat.com/discover/provider/groq)**: GroqのLPU推論エンジンは、最新の独立した大規模言語モデル（LLM）ベンチマークテストで卓越したパフォーマンスを示し、その驚異的な速度と効率でAIソリューションの基準を再定義しています。Groqは、即時推論速度の代表であり、クラウドベースの展開で良好なパフォーマンスを発揮しています。
+- **[Perplexity](https://lobechat.com/discover/provider/perplexity)**: Perplexityは、先進的な対話生成モデルの提供者であり、さまざまなLlama 3.1モデルを提供し、オンラインおよびオフラインアプリケーションをサポートし、特に複雑な自然言語処理タスクに適しています。
+- **[Mistral](https://lobechat.com/discover/provider/mistral)**: Mistralは、先進的な汎用、専門、研究型モデルを提供し、複雑な推論、多言語タスク、コード生成などの分野で広く使用されています。機能呼び出しインターフェースを通じて、ユーザーはカスタム機能を統合し、特定のアプリケーションを実現できます。
+- **[Ai21Labs](https://lobechat.com/discover/provider/ai21)**: AI21 Labsは企業向けに基盤モデルと人工知能システムを構築し、生成的人工知能の生産への応用を加速します。
+- **[Upstage](https://lobechat.com/discover/provider/upstage)**: Upstageは、さまざまなビジネスニーズに応じたAIモデルの開発に特化しており、Solar LLMや文書AIを含み、人造一般知能（AGI）の実現を目指しています。Chat APIを通じてシンプルな対話エージェントを作成し、機能呼び出し、翻訳、埋め込み、特定分野のアプリケーションをサポートします。
+- **[xAI](https://lobechat.com/discover/provider/xai)**: xAIは、人類の科学的発見を加速するための人工知能を構築することに専念している企業です。私たちの使命は、宇宙に対する共通の理解を促進することです。
 - **[Qwen](https://lobechat.com/discover/provider/qwen)**: 通義千問は、アリババクラウドが独自に開発した超大規模言語モデルであり、強力な自然言語理解と生成能力を持っています。さまざまな質問に答えたり、文章を創作したり、意見を表現したり、コードを執筆したりすることができ、さまざまな分野で活躍しています。
-- **[Wenxin](https://lobechat.com/discover/provider/wenxin)**: 企業向けのワンストップ大規模モデルと AI ネイティブアプリケーションの開発およびサービスプラットフォームで、最も包括的で使いやすい生成的人工知能モデルの開発とアプリケーション開発の全プロセスツールチェーンを提供します。
+- **[Wenxin](https://lobechat.com/discover/provider/wenxin)**: 企業向けのワンストップ大規模モデルとAIネイティブアプリケーションの開発およびサービスプラットフォームで、最も包括的で使いやすい生成的人工知能モデルの開発とアプリケーション開発の全プロセスツールチェーンを提供します。
 - **[Hunyuan](https://lobechat.com/discover/provider/hunyuan)**: テンセントが開発した大規模言語モデルであり、強力な中国語の創作能力、複雑な文脈における論理的推論能力、そして信頼性の高いタスク実行能力を備えています。
-- **[ZhiPu](https://lobechat.com/discover/provider/zhipu)**: 智谱 AI は、多モーダルおよび言語モデルのオープンプラットフォームを提供し、テキスト処理、画像理解、プログラミング支援など、幅広い AI アプリケーションシーンをサポートしています。
-- **[SiliconCloud](https://lobechat.com/discover/provider/siliconcloud)**: SiliconFlow は、AGI を加速させ、人類に利益をもたらすことを目指し、使いやすくコスト効率の高い GenAI スタックを通じて大規模 AI の効率を向上させることに取り組んでいます。
-- **[01.AI](https://lobechat.com/discover/provider/zeroone)**: 01.AI は、AI 2.0 時代の人工知能技術に特化し、「人 + 人工知能」の革新と応用を推進し、超強力なモデルと先進的な AI 技術を用いて人類の生産性を向上させ、技術の力を実現します。
-- **[Spark](https://lobechat.com/discover/provider/spark)**: 科大訊飛星火大モデルは、多分野、多言語の強力な AI 能力を提供し、先進的な自然言語処理技術を利用して、スマートハードウェア、スマート医療、スマート金融などのさまざまな垂直シーンに適した革新的なアプリケーションを構築します。
+- **[ZhiPu](https://lobechat.com/discover/provider/zhipu)**: 智谱AIは、多モーダルおよび言語モデルのオープンプラットフォームを提供し、テキスト処理、画像理解、プログラミング支援など、幅広いAIアプリケーションシーンをサポートしています。
+- **[SiliconCloud](https://lobechat.com/discover/provider/siliconcloud)**: SiliconFlowは、AGIを加速させ、人類に利益をもたらすことを目指し、使いやすくコスト効率の高いGenAIスタックを通じて大規模AIの効率を向上させることに取り組んでいます。
+- **[01.AI](https://lobechat.com/discover/provider/zeroone)**: 01.AIは、AI 2.0時代の人工知能技術に特化し、「人+人工知能」の革新と応用を推進し、超強力なモデルと先進的なAI技術を用いて人類の生産性を向上させ、技術の力を実現します。
+- **[Spark](https://lobechat.com/discover/provider/spark)**: 科大訊飛星火大モデルは、多分野、多言語の強力なAI能力を提供し、先進的な自然言語処理技術を利用して、スマートハードウェア、スマート医療、スマート金融などのさまざまな垂直シーンに適した革新的なアプリケーションを構築します。
 - **[SenseNova](https://lobechat.com/discover/provider/sensenova)**: 商湯日日新は、商湯の強力な基盤支援に基づき、高効率で使いやすい全スタックの大規模モデルサービスを提供します。
 - **[Stepfun](https://lobechat.com/discover/provider/stepfun)**: 階級星辰大モデルは、業界をリードする多モーダルおよび複雑な推論能力を備え、超長文の理解と強力な自律的検索エンジン機能をサポートしています。
-- **[Moonshot](https://lobechat.com/discover/provider/moonshot)**: Moonshot は、北京月之暗面科技有限公司が提供するオープンプラットフォームであり、さまざまな自然言語処理モデルを提供し、コンテンツ創作、学術研究、スマート推薦、医療診断などの広範な応用分野を持ち、長文処理や複雑な生成タスクをサポートしています。
-- **[Baichuan](https://lobechat.com/discover/provider/baichuan)**: 百川智能は、人工知能大モデルの研究開発に特化した企業であり、そのモデルは国内の知識百科、長文処理、生成創作などの中国語タスクで卓越したパフォーマンスを示し、海外の主流モデルを超えています。百川智能は、業界をリードする多モーダル能力を持ち、複数の権威ある評価で優れたパフォーマンスを示しています。そのモデルには、Baichuan 4、Baichuan 3 Turbo、Baichuan 3 Turbo 128k などが含まれ、異なるアプリケーションシーンに最適化され、高コストパフォーマンスのソリューションを提供しています。
-- **[Minimax](https://lobechat.com/discover/provider/minimax)**: MiniMax は 2021 年に設立された汎用人工知能テクノロジー企業であり、ユーザーと共に知能を共創することに取り組んでいます。MiniMax は、さまざまなモードの汎用大モデルを独自に開発しており、トリリオンパラメータの MoE テキスト大モデル、音声大モデル、画像大モデルを含んでいます。また、海螺 AI などのアプリケーションも展開しています。
-- **[InternLM](https://lobechat.com/discover/provider/internlm)**: 大規模モデルの研究と開発ツールチェーンに特化したオープンソース組織です。すべての AI 開発者に対して、高効率で使いやすいオープンプラットフォームを提供し、最先端の大規模モデルとアルゴリズム技術を身近に感じられるようにします。
-- **[Higress](https://lobechat.com/discover/provider/higress)**: Higress は、阿里内部で Tengine のリロードが長期接続のビジネスに悪影響を及ぼすことや、gRPC/Dubbo の負荷分散能力が不足している問題を解決するために生まれた、クラウドネイティブな API ゲートウェイです。
-- **[Gitee AI](https://lobechat.com/discover/provider/giteeai)**: Gitee AI の Serverless API は、AI 開発者に開梱即使用の大モデル推論 API サービスを提供する。
-- **[Taichu](https://lobechat.com/discover/provider/taichu)**: 中科院自動化研究所と武漢人工知能研究院が新世代の多モーダル大モデルを発表し、多輪問答、テキスト創作、画像生成、3D 理解、信号分析などの包括的な問答タスクをサポートし、より強力な認知、理解、創作能力を持ち、新しいインタラクティブな体験を提供します。
-- **[360 AI](https://lobechat.com/discover/provider/ai360)**: 360 AI は、360 社が提供する AI モデルとサービスプラットフォームであり、360GPT2 Pro、360GPT Pro、360GPT Turbo、360GPT Turbo Responsibility 8K など、さまざまな先進的な自然言語処理モデルを提供しています。これらのモデルは、大規模なパラメータと多モーダル能力を組み合わせており、テキスト生成、意味理解、対話システム、コード生成などの分野で広く使用されています。柔軟な価格戦略を通じて、360 AI は多様なユーザーのニーズに応え、開発者の統合をサポートし、スマートアプリケーションの革新と発展を促進します。
+- **[Moonshot](https://lobechat.com/discover/provider/moonshot)**: Moonshotは、北京月之暗面科技有限公司が提供するオープンプラットフォームであり、さまざまな自然言語処理モデルを提供し、コンテンツ創作、学術研究、スマート推薦、医療診断などの広範な応用分野を持ち、長文処理や複雑な生成タスクをサポートしています。
+- **[Baichuan](https://lobechat.com/discover/provider/baichuan)**: 百川智能は、人工知能大モデルの研究開発に特化した企業であり、そのモデルは国内の知識百科、長文処理、生成創作などの中国語タスクで卓越したパフォーマンスを示し、海外の主流モデルを超えています。百川智能は、業界をリードする多モーダル能力を持ち、複数の権威ある評価で優れたパフォーマンスを示しています。そのモデルには、Baichuan 4、Baichuan 3 Turbo、Baichuan 3 Turbo 128kなどが含まれ、異なるアプリケーションシーンに最適化され、高コストパフォーマンスのソリューションを提供しています。
+- **[Minimax](https://lobechat.com/discover/provider/minimax)**: MiniMaxは2021年に設立された汎用人工知能テクノロジー企業であり、ユーザーと共に知能を共創することに取り組んでいます。MiniMaxは、さまざまなモードの汎用大モデルを独自に開発しており、トリリオンパラメータのMoEテキスト大モデル、音声大モデル、画像大モデルを含んでいます。また、海螺AIなどのアプリケーションも展開しています。
+- **[InternLM](https://lobechat.com/discover/provider/internlm)**: 大規模モデルの研究と開発ツールチェーンに特化したオープンソース組織です。すべてのAI開発者に対して、高効率で使いやすいオープンプラットフォームを提供し、最先端の大規模モデルとアルゴリズム技術を身近に感じられるようにします。
+- **[Higress](https://lobechat.com/discover/provider/higress)**: Higressは、阿里内部でTengineのリロードが長期接続のビジネスに悪影響を及ぼすことや、gRPC/Dubboの負荷分散能力が不足している問題を解決するために生まれた、クラウドネイティブなAPIゲートウェイです。
+- **[Gitee AI](https://lobechat.com/discover/provider/giteeai)**: Gitee AIのServerless APIは、AI開発者に開梱即使用の大モデル推論APIサービスを提供する。
+- **[Taichu](https://lobechat.com/discover/provider/taichu)**: 中科院自動化研究所と武漢人工知能研究院が新世代の多モーダル大モデルを発表し、多輪問答、テキスト創作、画像生成、3D理解、信号分析などの包括的な問答タスクをサポートし、より強力な認知、理解、創作能力を持ち、新しいインタラクティブな体験を提供します。
+- **[360 AI](https://lobechat.com/discover/provider/ai360)**: 360 AIは、360社が提供するAIモデルとサービスプラットフォームであり、360GPT2 Pro、360GPT Pro、360GPT Turbo、360GPT Turbo Responsibility 8Kなど、さまざまな先進的な自然言語処理モデルを提供しています。これらのモデルは、大規模なパラメータと多モーダル能力を組み合わせており、テキスト生成、意味理解、対話システム、コード生成などの分野で広く使用されています。柔軟な価格戦略を通じて、360 AIは多様なユーザーのニーズに応え、開発者の統合をサポートし、スマートアプリケーションの革新と発展を促進します。
 
 </details>
 
@@ -261,14 +261,14 @@ LobeChat のプラグインエコシステムは、そのコア機能の重要�
 >
 > [📘 プラグインの使用][docs-usage-plugin]について詳しくはこちらをご覧ください。
 
-<!-- PLUGIN LIST -->
+<!-- PLUGIN LIST --> 
 
-| 最近追加                                                                                                                     | 説明                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [ウェブ](https://lobechat.com/discover/plugin/web)<br/><sup>By **Proghit** on **2025-01-24**</sup>                           | ページを読み取り分析して、Google の結果から包括的な回答を提供するスマートウェブ検索。<br/>`ウェブ` `検索` |
-| [MintbaseSearch](https://lobechat.com/discover/plugin/mintbasesearch)<br/><sup>By **mintbase** on **2024-12-31**</sup>       | NEAR プロトコル上の任意の NFT データを見つける。<br/>`暗号通貨` `nft`                                     |
-| [Bing_websearch](https://lobechat.com/discover/plugin/Bingsearch-identifier)<br/><sup>By **FineHow** on **2024-12-22**</sup> | BingApi を基にインターネットから情報を検索<br/>`bingsearch`                                               |
-| [PortfolioMeta](https://lobechat.com/discover/plugin/StockData)<br/><sup>By **portfoliometa** on **2024-12-22**</sup>        | 株を分析し、包括的なリアルタイムの投資データと分析を取得します。<br/>`stock`                              |
+| 最近追加                                                                                                                         | 説明                                                           |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| [ウェブ](https://lobechat.com/discover/plugin/web)<br/><sup>By **Proghit** on **2025-01-24**</sup>                              | ページを読み取り分析して、Googleの結果から包括的な回答を提供するスマートウェブ検索。<br/>`ウェブ` `検索` |
+| [MintbaseSearch](https://lobechat.com/discover/plugin/mintbasesearch)<br/><sup>By **mintbase** on **2024-12-31**</sup>       | NEARプロトコル上の任意のNFTデータを見つける。<br/>`暗号通貨` `nft`                  |
+| [Bing_websearch](https://lobechat.com/discover/plugin/Bingsearch-identifier)<br/><sup>By **FineHow** on **2024-12-22**</sup> | BingApiを基にインターネットから情報を検索<br/>`bingsearch`                    |
+| [PortfolioMeta](https://lobechat.com/discover/plugin/StockData)<br/><sup>By **portfoliometa** on **2024-12-22**</sup>        | 株を分析し、包括的なリアルタイムの投資データと分析を取得します。<br/>`stock`                 |
 
 > 📊 Total plugins: [<kbd>**48**</kbd>](https://lobechat.com/discover/plugins)
 
@@ -300,16 +300,16 @@ LobeChat エージェントマーケットプレイスでは、クリエイタ�
 > すべてのユーザーがこの成長するエコシステムに参加し、エージェントの反復と最適化に参加することを歓迎します。
 > 一緒に、より面白く、実用的で革新的なエージェントを作成し、エージェントの多様性と実用性をさらに豊かにしましょう。
 
-<!-- AGENT LIST -->
+<!-- AGENT LIST --> 
 
-| 最近追加                                                                                                                                                                                       | 説明                                                                                                                           |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| [小智フランス語翻訳アシスタント](https://lobechat.com/discover/assistant/xiao-zhi-french-translation-asst-v-1)<br/><sup>By **[WeR-Best](https://github.com/WeR-Best)** on **2025-02-10**</sup> | 親しみやすく、専門的で、共感力のあるフランス語翻訳 AI アシスタント<br/>`aiアシスタント` `フランス語翻訳` `異文化交流` `創造性` |
-| [命理研究者](https://lobechat.com/discover/assistant/fate-researcher)<br/><sup>By **[Jack980506](https://github.com/Jack980506)** on **2025-02-06**</sup>                                      | 八字命に精通<br/>`命理学` `八字` `伝統文化`                                                                                    |
-| [言語の魅力学習メンター](https://lobechat.com/discover/assistant/bad-language-helper)<br/><sup>By **[Guducat](https://github.com/Guducat)** on **2025-02-06**</sup>                            | 言語の魅力と多様な応答を教えるのが得意<br/>`言語学習` `対話例`                                                                 |
-| [Allinone](https://lobechat.com/discover/assistant/allinone-v-1)<br/><sup>By **[AXuanCreator](https://github.com/AXuanCreator)** on **2025-02-06**</sup>                                       | 革新・未来・卓越<br/>`プログラミング` `低コスト` `簡潔な回答`                                                                  |
+| 最近追加                                                                                                                                                                            | 説明                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [Cron式表現アシスタント](https://lobechat.com/discover/assistant/crontab-generate)<br/><sup>By **[edgesider](https://github.com/edgesider)** on **2025-02-17**</sup>                     | Crontab式生成<br/>`crontab` `時間表現` `トリガー時間` `ジェネレーター` `技術支援`                |
+| [小智フランス語翻訳アシスタント](https://lobechat.com/discover/assistant/xiao-zhi-french-translation-asst-v-1)<br/><sup>By **[WeR-Best](https://github.com/WeR-Best)** on **2025-02-10**</sup> | 親しみやすく、専門的で、共感力のあるフランス語翻訳AIアシスタント<br/>`aiアシスタント` `フランス語翻訳` `異文化交流` `創造性` |
+| [言語の魅力学習メンター](https://lobechat.com/discover/assistant/bad-language-helper)<br/><sup>By **[Guducat](https://github.com/Guducat)** on **2025-02-06**</sup>                        | 言語の魅力と多様な応答を教えるのが得意<br/>`言語学習` `対話例`                                     |
+| [命理研究者](https://lobechat.com/discover/assistant/fate-researcher)<br/><sup>By **[Jack980506](https://github.com/Jack980506)** on **2025-02-06**</sup>                            | 八字命に精通<br/>`命理学` `八字` `伝統文化`                                             |
 
-> 📊 Total agents: [<kbd>**486**</kbd> ](https://lobechat.com/discover/assistants)
+> 📊 Total agents: [<kbd>**487**</kbd> ](https://lobechat.com/discover/assistants)
 
  <!-- AGENT LIST -->
 
