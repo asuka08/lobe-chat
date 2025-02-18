@@ -111,6 +111,7 @@ const nextConfig: NextConfig = {
     },
   },
   output: buildWithDocker ? 'standalone' : undefined,
+  productionBrowserSourceMaps: false,
   reactStrictMode: true,
   redirects: async () => [
     {
