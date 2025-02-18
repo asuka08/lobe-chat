@@ -30,7 +30,8 @@ const Footer = memo<PropsWithChildren>(() => {
 
   const { hideGitHub } = useServerConfigStore(featureFlagsSelectors);
 
-  return hideGitHub ? null : (
+  // 隐藏lobechat页脚内容
+  return hideGitHub || true ? null : (
     <>
       <Flexbox justify={'flex-end'}>
         <Center

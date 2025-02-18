@@ -5,8 +5,7 @@ import Image, { ImageProps } from 'next/image';
 import { ReactNode, forwardRef, memo } from 'react';
 import { Flexbox, FlexboxProps } from 'react-layout-kit';
 
-import { Avatar, List, ListItemProps } from '@lobehub/ui';
-import { BRANDING_LOGO_URL, BRANDING_NAME } from '@/const/branding';
+import { BRANDING_NAME } from '@/const/branding';
 
 const useStyles = createStyles(({ css }) => {
   return {
@@ -40,7 +39,7 @@ const CustomImageLogo = memo<Omit<ImageProps, 'alt' | 'src'> & { size: number }>
       <Image
         alt={BRANDING_NAME}
         height={size}
-        src={BRANDING_LOGO_URL}
+        src='/icons/icon-192x192.maskable.png'
         unoptimized={true}
         width={size}
         {...rest}
@@ -71,7 +70,6 @@ const CustomLogo = memo<LobeChatProps>(({ extra, size = 32, className, style, ty
   const theme = useTheme();
   const { styles } = useStyles();
   let logoComponent: ReactNode;
-
   switch (type) {
     case '3d':
     case 'flat': {
@@ -107,6 +105,7 @@ const CustomLogo = memo<LobeChatProps>(({ extra, size = 32, className, style, ty
     }
   }
 
+  console.log('extra===3333', !extra, 'logoComponent:', logoComponent);
   if (!extra) return logoComponent;
 
   const extraSize = Math.round((size / 3) * 1.9);
@@ -115,12 +114,6 @@ const CustomLogo = memo<LobeChatProps>(({ extra, size = 32, className, style, ty
     <Flexbox align={'center'} className={className} flex={'none'} horizontal {...rest}>
       {logoComponent}
       <Divider size={extraSize} style={{ color: theme.colorFill }} />
-      {/* <Avatar
-        avatar={`/icons/icon-192x192.maskable.png`}
-        background={""}
-        size={40}
-        title={"333"}
-      /> */}
       <div className={styles.extraTitle} style={{ fontSize: extraSize }}>
         {extra}
       </div>
