@@ -1,0 +1,40 @@
+name: Docker Image CI liantiao
+
+on:
+  push:
+    branches: [ "python_sql" ]
+
+
+env:
+  docker_registry: ${{ vars.DOCKER_REGISTRY }}
+  docker_username: ${{ vars.DOCKER_USERNAME }}
+  docker_namespace: ${{ vars.DOCKER_NAMESPACE }}
+  image_name: lobe_chat_sql
+  image_tag: test
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+
+    
+    - name: Docker login
+      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login $docker_registry -u $docker_username --password-stdin
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag $docker_registry$docker_namespace/$image_name:$image_tag
+
+    - name: Docker Push
+      run: docker push $docker_registry$docker_namespace/$image_name:$image_tag
+
+    - name: Get commit info
+      id: get-commit-info
+      run: |
+          echo "::set-output name=commit-author::$(git --no-pager log -1 --pretty=format:'%an')"
+          echo "::set-output name=commit-message::$(git --no-pager log -1 --pretty=format:'%s')"
