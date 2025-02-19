@@ -4,7 +4,7 @@
 
 export const LOBE_CHAT_CLOUD = 'Syngents Cloud';
 
-export const BRANDING_NAME = '新小智';
+export const BRANDING_NAME = 'Syngents';
 export const BRANDING_LOGO_URL = '';
 
 export const ORG_NAME = 'LobeHub';
