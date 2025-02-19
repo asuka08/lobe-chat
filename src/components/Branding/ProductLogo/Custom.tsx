@@ -105,7 +105,6 @@ const CustomLogo = memo<LobeChatProps>(({ extra, size = 32, className, style, ty
     }
   }
 
-  console.log('extra===3333', !extra, 'logoComponent:', logoComponent);
   if (!extra) return logoComponent;
 
   const extraSize = Math.round((size / 3) * 1.9);

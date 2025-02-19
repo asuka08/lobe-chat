@@ -37,7 +37,7 @@ const ListItem = memo<ListItemProps & { avatar: string; avatarBackground?: strin
       () => (
         <Avatar
           animation={isHovering}
-          avatar={`/icons/icon-192x192.maskable.png`}
+          avatar={avatar}
           background={avatarBackground}
           shape="circle"
           size={46}
