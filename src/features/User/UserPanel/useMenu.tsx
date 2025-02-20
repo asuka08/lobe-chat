@@ -1,5 +1,4 @@
 import { Icon } from '@lobehub/ui';
-import { Badge } from 'antd';
 import { ItemType } from 'antd/es/menu/interface';
 import {
   CircleUserRound,
@@ -48,7 +47,8 @@ const NewVersionBadge = memo(
     return (
       <Flexbox align={'center'} flex={1} gap={8} horizontal onClick={onClick} width={'100%'}>
         <span>{children}</span>
-        <Badge count={t('upgradeVersion.hasNew')} />
+        {/* TODO:sy 隐藏更新提示 */}
+        {/* <Badge count={t('upgradeVersion.hasNew')} /> */}
       </Flexbox>
     );
   },
