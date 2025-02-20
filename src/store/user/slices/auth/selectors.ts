@@ -21,7 +21,7 @@ const username = (s: UserStore) => {
   if (s.isSignedIn) return s.user?.username;
 
   // return 'anonymous';
-  return '新小智';
+  return '确小幸';
 };
 
 export const userProfileSelectors = {

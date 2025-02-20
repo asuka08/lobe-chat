@@ -2,9 +2,9 @@
 // if you want to use it in the commercial usage
 // please contact us for more information: hello@lobehub.com
 
-export const LOBE_CHAT_CLOUD = 'Syngents Cloud';
+export const LOBE_CHAT_CLOUD = 'AGI Transformer Cloud';
 
-export const BRANDING_NAME = 'Syngents';
+export const BRANDING_NAME = 'AGI Transformer';
 export const BRANDING_LOGO_URL = '';
 
 export const ORG_NAME = 'LobeHub';
