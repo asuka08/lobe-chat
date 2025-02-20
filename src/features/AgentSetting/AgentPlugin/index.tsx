@@ -10,7 +10,6 @@ import { Center, Flexbox } from 'react-layout-kit';
 
 import { FORM_STYLE } from '@/const/layoutTokens';
 import PluginStore from '@/features/PluginStore';
-import PluginTag from '@/features/PluginStore/PluginItem/PluginTag';
 import { useFetchInstalledPlugins } from '@/hooks/useFetchInstalledPlugins';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 import { pluginHelpers, useToolStore } from '@/store/tool';
@@ -43,7 +42,7 @@ const AgentPlugin = memo(() => {
 
   const list = installedPlugins.map(({ identifier, type, meta, author }) => {
     const isCustomPlugin = type === 'customPlugin';
-
+    // console.log('identifier============', identifier, type, meta, author);
     return {
       avatar: <Avatar avatar={pluginHelpers.getPluginAvatar(meta)} style={{ flex: 'none' }} />,
       children: isCustomPlugin ? (
@@ -55,7 +54,8 @@ const AgentPlugin = memo(() => {
       label: (
         <Flexbox align={'center'} gap={8} horizontal>
           {pluginHelpers.getPluginTitle(meta)}
-          <PluginTag author={author} type={type} />
+          {/* TODO: 隐藏作者 */}
+          {/* <PluginTag author={author} type={type} /> */}
         </Flexbox>
       ),
       minWidth: undefined,

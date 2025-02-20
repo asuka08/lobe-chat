@@ -31,7 +31,8 @@ const manifest = (): MetadataRoute.Manifest | any => {
     ],
     id: kebabCase(BRANDING_NAME),
     name: BRANDING_NAME,
-    screenshots: BRANDING_LOGO_URL
+    // pwa安装等截图隐藏
+    screenshots: BRANDING_LOGO_URL || true
       ? []
       : [
           {

@@ -91,7 +91,8 @@ export const useCategory = () => {
             </Link>
           ),
         },
-        !hideDocs && {
+        // TODO: 隐藏关于页面
+        false && !hideDocs && {
           icon: <Icon icon={Info} />,
           key: SettingsTabs.About,
           label: (
