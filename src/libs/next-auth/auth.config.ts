@@ -38,6 +38,12 @@ export default {
       }
       return session;
     },
+    // [wysh end]
+    async redirect({ url, baseUrl }) {
+      // 自定义重定向逻辑
+      return 'https://syngents.cn'
+    }
+    // [wysh end]
   },
   debug: authEnv.NEXT_AUTH_DEBUG,
   pages: {
