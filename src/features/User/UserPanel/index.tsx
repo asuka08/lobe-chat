@@ -22,7 +22,8 @@ const UserPanel = memo<PropsWithChildren>(({ children }) => {
 
   return (
     // TODO:Sy 隐藏应用更新的红点提示
-    <UpgradeBadge showBadge={false && hasNewVersion}>
+    // <UpgradeBadge showBadge={hasNewVersion}>
+    <UpgradeBadge>
       <Popover
         arrow={false}
         content={<PanelContent closePopover={() => setOpen(false)} />}
