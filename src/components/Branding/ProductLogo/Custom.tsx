@@ -4,6 +4,8 @@ import { createStyles, useTheme } from 'antd-style';
 import Image, { ImageProps } from 'next/image';
 import { ReactNode, forwardRef, memo } from 'react';
 import { Flexbox, FlexboxProps } from 'react-layout-kit';
+import { getCompanyInfo } from '@/const/company';
+
 
 import { BRANDING_NAME } from '@/const/branding';
 
@@ -39,7 +41,7 @@ const CustomImageLogo = memo<Omit<ImageProps, 'alt' | 'src'> & { size: number }>
       <Image
         alt={BRANDING_NAME}
         height={size}
-        src='/icons/icon-192x192.maskable.png'
+        src={getCompanyInfo().logo}
         unoptimized={true}
         width={size}
         {...rest}
