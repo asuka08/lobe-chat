@@ -4,6 +4,7 @@ import { enableAuth, enableClerk, enableNextAuth } from '@/const/auth';
 import { BRANDING_NAME } from '@/const/branding';
 import { UserStore } from '@/store/user';
 import { LobeUser } from '@/types/user';
+import { getCompanyInfo } from '@/const/company';
 
 const DEFAULT_USERNAME = BRANDING_NAME;
 
@@ -21,7 +22,7 @@ const username = (s: UserStore) => {
   if (s.isSignedIn) return s.user?.username;
 
   // return 'anonymous';
-  return '确小幸';
+  return getCompanyInfo().agentInfo.title;
 };
 
 export const userProfileSelectors = {

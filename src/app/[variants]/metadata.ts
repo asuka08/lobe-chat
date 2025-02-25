@@ -2,7 +2,7 @@ import { appEnv } from '@/config/app';
 import { BRANDING_LOGO_URL, BRANDING_NAME, ORG_NAME } from '@/const/branding';
 import { DEFAULT_LANG } from '@/const/locale';
 import { OFFICIAL_URL, OG_URL } from '@/const/url';
-import { isCustomBranding, isCustomORG } from '@/const/version';
+import { isCustomORG } from '@/const/version';
 import { translation } from '@/server/translation';
 import { DynamicLayoutProps } from '@/types/next';
 import { RouteVariants } from '@/utils/server/routeVariants';
@@ -25,13 +25,15 @@ export const generateMetadata = async (props: DynamicLayoutProps) => {
       title: BRANDING_NAME,
     },
     description: t('chat.description', { appName: BRANDING_NAME }),
-    icons: isCustomBranding
-      ? BRANDING_LOGO_URL
-      : {
-          apple: '/apple-touch-icon.png?v=1',
-          icon: '/favicon.ico?v=1',
-          shortcut: '/favicon-32x32.ico?v=1',
-        },
+    // 这里是判断是否为自定义的品牌logo, 目前场景都是非LobeChat, 所以都是true
+    icons: BRANDING_LOGO_URL,
+    // icons: isCustomBranding
+    //   ? BRANDING_LOGO_URL
+    //   : {
+    //       apple: '/apple-touch-icon.png?v=1',
+    //       icon: '/favicon-32x32.ico?v=1',
+    //       shortcut: '/favicon-32x32.ico?v=1',
+    //     },
     manifest: noManifest ? undefined : '/manifest.json',
     metadataBase: new URL(OFFICIAL_URL),
     openGraph: {
