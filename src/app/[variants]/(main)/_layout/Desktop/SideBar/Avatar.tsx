@@ -23,6 +23,7 @@ const Avatar = memo(() => {
     </Suspense>
   );
 
+
   return hideSettingsMoveGuide ? (
     content
   ) : (
