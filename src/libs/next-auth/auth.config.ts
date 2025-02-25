@@ -40,8 +40,10 @@ export default {
     },
     // [wysh end]
     async redirect({ url, baseUrl }) {
-      // 自定义重定向逻辑
-      return 'https://syngents.cn'
+
+      const urlObj = new URL(url);
+      const strippedUrl = `${urlObj.protocol}//${urlObj.hostname}`;
+      return strippedUrl;
     }
     // [wysh end]
   },
