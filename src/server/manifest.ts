@@ -28,6 +28,7 @@ export class Manifest {
     id,
     icons,
     screenshots,
+    start_url,
   }: {
     color?: string;
     description: string;
@@ -35,6 +36,7 @@ export class Manifest {
     id: string;
     name: string;
     screenshots: ScreenshotItem[];
+    start_url?: string;
   }) {
     return {
       background_color: color,
@@ -63,7 +65,7 @@ export class Manifest {
       screenshots: screenshots.map((item) => this._getScreenshot(item)),
       short_name: name,
       splash_pages: null,
-      start_url: '.',
+      start_url: start_url || '/chat',
       tab_strip: {
         new_tab_button: {
           url: '/',

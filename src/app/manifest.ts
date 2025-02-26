@@ -32,7 +32,7 @@ const manifest = (): MetadataRoute.Manifest | any => {
     id: kebabCase(BRANDING_NAME),
     name: BRANDING_NAME,
     // pwa安装等截图隐藏
-    screenshots: BRANDING_LOGO_URL
+screenshots: BRANDING_LOGO_URL
       ? []
       : [
           {
@@ -76,6 +76,8 @@ const manifest = (): MetadataRoute.Manifest | any => {
             url: '/screenshots/shot-5.desktop.png',
           },
         ],
+    
+    start_url: '/chat',
   });
 };
 
