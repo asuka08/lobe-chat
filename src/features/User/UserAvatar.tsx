@@ -54,7 +54,6 @@ const UserAvatar = forwardRef<HTMLDivElement, UserAvatarProps>(
     ]);
 
     const isSignedIn = useUserStore(authSelectors.isLogin);
-
     return (
       <Avatar
         alt={isSignedIn && !!username ? username : BRANDING_NAME}

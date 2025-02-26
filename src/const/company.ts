@@ -29,15 +29,30 @@ export const COMPANY_INFO = {
 type CompanyKeys = keyof typeof COMPANY_INFO;
 
 export const getCompanyInfo = () => {
-  // const baseUrl = 'https://os.syngents.cn';
   let currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  // if (currentUrl.includes('localhost:3010')) {
+  //   return COMPANY_INFO['bohua']
+  // }
+  // currentUrl = 'https://bohua-os.syngents.cn'
   // 提取子域名
-  const match = currentUrl.match(/^https:\/\/(.*?)-os\.syngents\.cn/);
-  // 将 companyKey 的类型指定为 CompanyKeys
-  const companyKey: CompanyKeys = (match ? match[1] : 'default') as CompanyKeys;
-  console.log('currentUrl====', currentUrl, 'match====', match)
-  // 返回对应的公司信息
-  return COMPANY_INFO[companyKey] || COMPANY_INFO['default'];
+  if (currentUrl && currentUrl.includes('os.syngents.cn')) {
+    console.log('2222222222222222:', currentUrl)
+    const match = currentUrl.match(/^https:\/\/(.*?)-os\.syngents\.cn/);
+    // 将 companyKey 的类型指定为 CompanyKeys
+    const companyKey: CompanyKeys = (match ? match[1] : 'default') as CompanyKeys;
+    // 返回对应的公司信息
+    return COMPANY_INFO[companyKey] || COMPANY_INFO['default'];
+  } else {
+    console.log('33333333333');
+    return {
+      agentInfo: {
+        title: '',
+        url: ''
+      },
+      companyName: '',
+      logo: '',
+    }
+  }
 };
 
 
