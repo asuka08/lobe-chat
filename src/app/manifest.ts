@@ -30,7 +30,7 @@ const manifest = (): MetadataRoute.Manifest | any => {
       },
     ],
     id: kebabCase(BRANDING_NAME),
-    name: BRANDING_NAME,
+    name: BRANDING_NAME || 'AGI Transformer',
     // pwa安装等截图隐藏
 screenshots: BRANDING_LOGO_URL
       ? []
