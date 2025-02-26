@@ -30,9 +30,9 @@ const manifest = (): MetadataRoute.Manifest | any => {
       },
     ],
     id: kebabCase(BRANDING_NAME),
-    name: BRANDING_NAME || 'AGI Transformer',
+    name: 'Syngents',
     // pwa安装等截图隐藏
-screenshots: BRANDING_LOGO_URL
+screenshots: BRANDING_LOGO_URL || true
       ? []
       : [
           {
@@ -76,6 +76,8 @@ screenshots: BRANDING_LOGO_URL
             url: '/screenshots/shot-5.desktop.png',
           },
         ],
+    
+    short_name: 'Syngents',
     
     start_url: '/chat',
   });
