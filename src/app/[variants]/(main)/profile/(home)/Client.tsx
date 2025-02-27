@@ -36,12 +36,13 @@ const Client = memo<{ mobile?: boolean }>(() => {
         label: t('profile.username'),
         minWidth: undefined,
       },
-      {
-        children: userProfile?.email || '--',
-        hidden: !isLoginWithNextAuth || !userProfile?.email,
-        label: t('profile.email'),
-        minWidth: undefined,
-      },
+      // TODO:Sy, 隐藏客户端邮箱地址的展示, 假邮箱
+      // {
+      //   children: userProfile?.email || '--',
+      //   hidden: !isLoginWithNextAuth || !userProfile?.email,
+      //   label: t('profile.email'),
+      //   minWidth: undefined,
+      // },
     ],
     title: t('tab.profile'),
   };

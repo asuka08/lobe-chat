@@ -2,6 +2,7 @@ import qs from 'query-string';
 
 import { BRANDING_LOGO_URL } from '@/const/branding';
 import { getCanonicalUrl } from '@/server/utils/url';
+import { getCompanyInfo } from '@/const/company';
 
 const MAX_AGE = 31_536_000;
 const COLOR = '#000000';
@@ -40,6 +41,7 @@ export class Manifest {
     short_name?: string;
     start_url?: string;
   }) {
+    console.log('icons.map((item) => this._getIcon(item)):', icons.map((item) => this._getIcon(item)))
     return {
       background_color: color,
       cache_busting_mode: 'all',
@@ -55,7 +57,7 @@ export class Manifest {
       id: id,
       immutable: 'true',
       max_age: MAX_AGE,
-      name: name || 'Syngents',
+      name: name || getCompanyInfo().companyName || 'Syngents',
       orientation: 'portrait',
       related_applications: [
         {
@@ -65,7 +67,7 @@ export class Manifest {
       ],
       scope: '/',
       screenshots: screenshots.map((item) => this._getScreenshot(item)),
-      short_name: short_name || 'Syngents',
+      short_name: short_name || getCompanyInfo().companyName || 'Syngents',
       splash_pages: null,
       start_url: start_url || '/chat',
       tab_strip: {

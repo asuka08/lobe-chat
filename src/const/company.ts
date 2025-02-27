@@ -35,7 +35,7 @@ export const getCompanyInfo = () => {
   // }
   // currentUrl = 'https://bohua-os.syngents.cn'
   // 提取子域名
-  if (currentUrl && currentUrl.includes('os.syngents.cn')) {
+  if (currentUrl && (currentUrl.includes('os.syngents.cn') || currentUrl.includes('localhost'))) {
     console.log('2222222222222222:', currentUrl)
     const match = currentUrl.match(/^https:\/\/(.*?)-os\.syngents\.cn/);
     // 将 companyKey 的类型指定为 CompanyKeys
