@@ -10,6 +10,7 @@ import { useAgentStore } from '@/store/agent';
 import { agentSelectors } from '@/store/agent/selectors';
 import { useSessionStore } from '@/store/session';
 import { sessionMetaSelectors, sessionSelectors } from '@/store/session/selectors';
+import { getCompanyInfo } from '@/const/company';
 
 import { useContainerStyles } from '../style';
 import ChatList from './ChatList';
@@ -34,7 +35,7 @@ const Preview = memo<FieldType & { title?: string }>(
     const { styles } = useStyles(withBackground);
     const { styles: containerStyles } = useContainerStyles();
 
-    const displayTitle = isInbox ? t('inbox.title') : title;
+    const displayTitle = isInbox ? t('inbox.title', {agentName: getCompanyInfo()?.agentInfo?.title}) : title;
     const displayDesc = isInbox ? t('inbox.desc') : description;
 
     return (

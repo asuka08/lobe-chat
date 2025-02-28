@@ -6,6 +6,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import { getCompanyInfo } from '@/const/company';
 import { useChatStore } from '@/store/chat';
 import { topicSelectors } from '@/store/chat/selectors';
 import { useGlobalStore } from '@/store/global';
@@ -25,7 +26,7 @@ const ChatHeaderTitle = memo(() => {
   ]);
   const theme = useTheme();
 
-  const displayTitle = isInbox ? t('inbox.title') : title;
+  const displayTitle = isInbox ? t('inbox.title', {agentName: getCompanyInfo()?.agentInfo?.title}) : title;
 
   return (
     <MobileNavBarTitle
