@@ -13,7 +13,8 @@ const SubmitAgentButton = memo<{ modal?: boolean }>(({ modal }) => {
   const { t } = useTranslation('setting');
   const mobile = useServerConfigStore((s) => s.isMobile);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  // TODO:Sy 会话设置 (分享到助手市场) => 隐藏
+  return null;
   return (
     <>
       {modal ? (
