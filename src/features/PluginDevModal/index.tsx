@@ -1,12 +1,10 @@
-import { Alert, Icon, Modal, Tooltip } from '@lobehub/ui';
+import { Modal, Tooltip } from '@lobehub/ui';
 import { App, Button, Form, Popconfirm, Segmented } from 'antd';
 import { useResponsive } from 'antd-style';
-import { MoveUpRight } from 'lucide-react';
 import { memo, useEffect, useState } from 'react';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import { WIKI_PLUGIN_GUIDE } from '@/const/url';
 import { LobeToolCustomPlugin } from '@/types/tool/plugin';
 
 import PluginPreview from './PluginPreview';
@@ -118,7 +116,8 @@ const DevModal = memo<DevModalProps>(
               e.stopPropagation();
             }}
           >
-            <Alert
+            {/* TODO:Sy: 添加自定义插件隐藏描述隐藏 */}
+            {/* <Alert
               message={
                 <Trans i18nKey={'dev.modalDesc'} ns={'plugin'}>
                   添加自定义插件后，可用于插件开发验证，也可直接在会话中使用。插件开发文档请参考：
@@ -135,7 +134,7 @@ const DevModal = memo<DevModalProps>(
               }
               showIcon
               type={'info'}
-            />
+            /> */}
             <Segmented
               block
               onChange={(e) => {
