@@ -47,7 +47,7 @@ export const getCompanyInfo = () => {
     console.log('2222222222222222:', currentUrl)
     const match = currentUrl.match(/^https:\/\/(.*?)-os\.syngents\.cn/);
     // 将 companyKey 的类型指定为 CompanyKeys
-    const companyKey: CompanyKeys = (match ? match[1] : 'lig') as CompanyKeys;
+    const companyKey: CompanyKeys = (match ? match[1] : 'default') as CompanyKeys;
     // 返回对应的公司信息
     return COMPANY_INFO[companyKey] || COMPANY_INFO['default'];
   } else {
