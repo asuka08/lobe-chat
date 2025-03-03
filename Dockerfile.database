@@ -74,6 +74,9 @@ ENV NEXT_PUBLIC_ANALYTICS_UMAMI="${NEXT_PUBLIC_ANALYTICS_UMAMI}" \
 # Node
 ENV NODE_OPTIONS="--max-old-space-size=8192"
 
+# Disable Edge Speech TTS during build
+ENV NEXT_PUBLIC_ENABLE_EDGE_TTS="false"
+
 WORKDIR /app
 
 # 首先复制 patches 目录，这样 patch-package 可以找到补丁文件
