@@ -30,6 +30,14 @@ export const COMPANY_INFO = {
     },
     companyName: '星座厨房',
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/starkitchen-os/icons/icon-192x192.png'
+  },
+  'fenxiang': {
+    agentInfo: {
+      title: '芬小香',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/fenxiang-os/icons/icon-agent.png'
+    },
+    companyName: '芬香',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/fenxiang-os/icons/icon-192x192.png'
   }
 };
 
