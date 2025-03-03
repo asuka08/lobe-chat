@@ -1,4 +1,3 @@
-import { getCompanyInfo } from '@/const/company';
 
 export default {
   ModelSwitch: {
@@ -38,7 +37,7 @@ export default {
   historySummary: '历史消息总结',
   inbox: {
     desc: '开启大脑集群，激发思维火花。你的智能助理，在这里与你交流一切',
-    title: `${getCompanyInfo().agentInfo.title}`,
+    title: "{{agentName}}",
   },
   input: {
     addAi: '添加一条 AI 消息',

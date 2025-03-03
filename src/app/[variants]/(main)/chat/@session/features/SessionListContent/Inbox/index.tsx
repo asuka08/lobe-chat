@@ -17,6 +17,7 @@ const Inbox = memo(() => {
   const mobile = useServerConfigStore((s) => s.isMobile);
   const activeId = useSessionStore((s) => s.activeId);
   const switchSession = useSwitchSession();
+  
   return (
     <Link
       aria-label={t('inbox.title', {agentName: getCompanyInfo().agentInfo.title})}
