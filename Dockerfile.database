@@ -15,7 +15,7 @@ RUN \
     fi \
     # Add required package
     && apt update \
-    && apt install ca-certificates proxychains-ng -qy \
+    && apt install ca-certificates proxychains-ng python3 make g++ -qy \
     # Prepare required package to distroless
     && mkdir -p /distroless/bin /distroless/etc /distroless/etc/ssl/certs /distroless/lib \
     # Copy proxychains to distroless
@@ -72,7 +72,7 @@ ENV NEXT_PUBLIC_ANALYTICS_UMAMI="${NEXT_PUBLIC_ANALYTICS_UMAMI}" \
     NEXT_PUBLIC_UMAMI_WEBSITE_ID="${NEXT_PUBLIC_UMAMI_WEBSITE_ID}"
 
 # Node
-ENV NODE_OPTIONS="--max-old-space-size=8192"
+ENV NODE_OPTIONS="--max-old-space-size=8192 --openssl-legacy-provider"
 
 # Disable Edge Speech TTS during build
 ENV NEXT_PUBLIC_ENABLE_EDGE_TTS="false"
@@ -108,7 +108,7 @@ RUN \
 COPY . .
 
 # run build standalone for docker version
-RUN pnpm run build:docker
+RUN pnpm install --force && pnpm run build:docker
 
 ## Application image, copy all the files for production
 FROM busybox:latest AS app
