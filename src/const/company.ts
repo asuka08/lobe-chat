@@ -38,7 +38,15 @@ export const COMPANY_INFO = {
     },
     companyName: '芬香',
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/fenxiang-os/icons/icon-192x192.png'
-  }
+  },
+  'palace': {
+    agentInfo: {
+      title: '朗小兹',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-agent.png'
+    },
+    companyName: '朗丽兹',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-192x192.png'
+  },
 };
 
 // 定义 COMPANY_INFO 键的类型
