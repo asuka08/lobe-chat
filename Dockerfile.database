@@ -105,20 +105,7 @@ RUN \
 COPY . .
 
 # run build standalone for docker version
-RUN \
-    echo "Starting build process..." && \
-    pnpm run build:docker || { \
-        echo "Build failed. Checking for common issues..."; \
-        echo "Node version:"; \
-        node -v; \
-        echo "PNPM version:"; \
-        pnpm -v; \
-        echo "Available disk space:"; \
-        df -h; \
-        echo "Memory status:"; \
-        free -h; \
-        exit 1; \
-    }
+RUN npm run build:docker
 
 ## Application image, copy all the files for production
 FROM busybox:latest AS app
