@@ -22,6 +22,7 @@ import LMStudioProvider from './lmstudio';
 import MinimaxProvider from './minimax';
 import MistralProvider from './mistral';
 import MoonshotProvider from './moonshot';
+import AgiProvider from './agi';
 import NovitaProvider from './novita';
 import OllamaProvider from './ollama';
 import OpenAIProvider from './openai';
@@ -56,6 +57,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   MinimaxProvider.chatModels,
   MistralProvider.chatModels,
   MoonshotProvider.chatModels,
+  AgiProvider.chatModels,
   OllamaProvider.chatModels,
   OpenRouterProvider.chatModels,
   TogetherAIProvider.chatModels,
@@ -115,6 +117,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   SenseNovaProvider,
   StepfunProvider,
   MoonshotProvider,
+  AgiProvider,
   BaichuanProvider,
   MinimaxProvider,
   LMStudioProvider,
@@ -157,6 +160,7 @@ export { default as LMStudioProviderCard } from './lmstudio';
 export { default as MinimaxProviderCard } from './minimax';
 export { default as MistralProviderCard } from './mistral';
 export { default as MoonshotProviderCard } from './moonshot';
+export { default as AgiProviderCard } from './agi';
 export { default as NovitaProviderCard } from './novita';
 export { default as OllamaProviderCard } from './ollama';
 export { default as OpenAIProviderCard } from './openai';

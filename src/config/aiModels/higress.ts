@@ -323,6 +323,18 @@ const higressChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
     },
+    contextWindowTokens: 128_000,
+    description:
+      'agi 4o',
+    displayName: 'Moonshot V1 128K',
+    enabled: true,
+    id: 'agi-4o',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+    },
     contextWindowTokens: 32_768,
     description:
       '模型能力国内第一，在知识百科、长文本、生成创作等中文任务上超越国外主流模型。还具备行业领先的多模态能力，多项权威评测基准表现优异。',

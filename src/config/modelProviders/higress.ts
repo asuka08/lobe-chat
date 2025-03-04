@@ -273,6 +273,17 @@ const Higress: ModelProviderCard = {
       functionCall: true,
       id: 'moonshot-v1-128k',
     },
+
+    // [wy] agi 4o
+    {
+      contextWindowTokens: 128_000,
+      description:
+        'Agi 4o',
+      displayName: 'Agi 4o',
+      enabled: true,
+      functionCall: true,
+      id: 'agi-4o',
+    },
     //百川智能
     {
       contextWindowTokens: 32_768,

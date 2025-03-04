@@ -22,6 +22,7 @@ import { default as lmstudio } from './lmstudio';
 import { default as minimax } from './minimax';
 import { default as mistral } from './mistral';
 import { default as moonshot } from './moonshot';
+import { default as agi } from './agi';
 import { default as novita } from './novita';
 import { default as ollama } from './ollama';
 import { default as openai } from './openai';
@@ -83,6 +84,7 @@ export const LOBE_DEFAULT_MODEL_LIST = buildDefaultModelList({
   minimax,
   mistral,
   moonshot,
+  agi,
   novita,
   ollama,
   openai,
