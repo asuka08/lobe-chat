@@ -13,21 +13,22 @@ export type DiscoverPageProps<T = string> = PageProps<
 >;
 
 export enum AssistantCategory {
-  Academic = 'academic',
-  All = 'all',
-  Career = 'career',
-  CopyWriting = 'copywriting',
-  Design = 'design',
-  Education = 'education',
-  Emotions = 'emotions',
-  Entertainment = 'entertainment',
-  Games = 'games',
-  General = 'general',
-  Life = 'life',
-  Marketing = 'marketing',
-  Office = 'office',
-  Programming = 'programming',
-  Translation = 'translation',
+  Administration = 'Administration',
+  Advertising = 'Advertising',
+  All = 'All',
+  CopyWriting = 'Copywriting',
+  Education = 'Education',
+  Entertainment = 'Entertainment',
+  Finance = 'Finance',
+  General = 'General',
+  Images = 'Images',
+  Legal = 'Legal',
+  Marketing = 'Marketing',
+  Operations = 'Operations',
+  Personnel = 'Personnel',
+  Strategy = 'Strategy',
+  Technology = 'Technology',
+  Videos = 'Videos',
 }
 
 export enum PluginCategory {
