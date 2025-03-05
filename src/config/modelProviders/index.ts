@@ -1,5 +1,6 @@
 import { ChatModelCard, ModelProviderCard } from '@/types/llm';
 
+import AgiProvider from './agi';
 import Ai21Provider from './ai21';
 import Ai360Provider from './ai360';
 import AnthropicProvider from './anthropic';
@@ -22,7 +23,7 @@ import LMStudioProvider from './lmstudio';
 import MinimaxProvider from './minimax';
 import MistralProvider from './mistral';
 import MoonshotProvider from './moonshot';
-import AgiProvider from './agi';
+
 import NovitaProvider from './novita';
 import OllamaProvider from './ollama';
 import OpenAIProvider from './openai';
@@ -46,6 +47,7 @@ import ZhiPuProvider from './zhipu';
  * @deprecated
  */
 export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
+  AgiProvider.chatModels,
   OpenAIProvider.chatModels,
   QwenProvider.chatModels,
   ZhiPuProvider.chatModels,
@@ -57,7 +59,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   MinimaxProvider.chatModels,
   MistralProvider.chatModels,
   MoonshotProvider.chatModels,
-  AgiProvider.chatModels,
+  
   OllamaProvider.chatModels,
   OpenRouterProvider.chatModels,
   TogetherAIProvider.chatModels,
@@ -86,6 +88,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
 ].flat();
 
 export const DEFAULT_MODEL_PROVIDER_LIST = [
+  AgiProvider,
   OpenAIProvider,
   { ...AzureProvider, chatModels: [] },
   OllamaProvider,
@@ -117,7 +120,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   SenseNovaProvider,
   StepfunProvider,
   MoonshotProvider,
-  AgiProvider,
+  
   BaichuanProvider,
   MinimaxProvider,
   LMStudioProvider,
