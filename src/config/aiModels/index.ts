@@ -1,5 +1,6 @@
 import { AiFullModelCard, LobeDefaultAiModelListItem } from '@/types/aiModel';
 
+import { default as agi } from './agi';
 import { default as ai21 } from './ai21';
 import { default as ai360 } from './ai360';
 import { default as anthropic } from './anthropic';
@@ -22,7 +23,6 @@ import { default as lmstudio } from './lmstudio';
 import { default as minimax } from './minimax';
 import { default as mistral } from './mistral';
 import { default as moonshot } from './moonshot';
-import { default as agi } from './agi';
 import { default as novita } from './novita';
 import { default as ollama } from './ollama';
 import { default as openai } from './openai';
@@ -62,6 +62,7 @@ const buildDefaultModelList = (map: ModelsMap): LobeDefaultAiModelListItem[] => 
 };
 
 export const LOBE_DEFAULT_MODEL_LIST = buildDefaultModelList({
+  agi,
   ai21,
   ai360,
   anthropic,
@@ -84,7 +85,6 @@ export const LOBE_DEFAULT_MODEL_LIST = buildDefaultModelList({
   minimax,
   mistral,
   moonshot,
-  agi,
   novita,
   ollama,
   openai,
@@ -105,6 +105,7 @@ export const LOBE_DEFAULT_MODEL_LIST = buildDefaultModelList({
   zhipu,
 });
 
+export { default as agi } from './agi';
 export { default as ai21 } from './ai21';
 export { default as ai360 } from './ai360';
 export { default as anthropic } from './anthropic';
