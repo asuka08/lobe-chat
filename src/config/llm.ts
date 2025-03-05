@@ -27,6 +27,10 @@ export const getLLMConfig = () => {
       ENABLED_MOONSHOT: z.boolean(),
       MOONSHOT_API_KEY: z.string().optional(),
 
+      // [wy]
+      ENABLED_AGI: z.boolean(),
+      AGI_API_KEY: z.string().optional(),
+
       ENABLED_PERPLEXITY: z.boolean(),
       PERPLEXITY_API_KEY: z.string().optional(),
 
@@ -172,6 +176,10 @@ export const getLLMConfig = () => {
 
       ENABLED_MOONSHOT: !!process.env.MOONSHOT_API_KEY,
       MOONSHOT_API_KEY: process.env.MOONSHOT_API_KEY,
+
+      // [wy] 
+      ENABLED_AGI: !!process.env.AGI_API_KEY,
+      AGI_API_KEY: process.env.AGI_API_KEY,
 
       ENABLED_GROQ: !!process.env.GROQ_API_KEY,
       GROQ_API_KEY: process.env.GROQ_API_KEY,
