@@ -326,7 +326,7 @@ const higressChatModels: AIChatModelCard[] = [
     contextWindowTokens: 128_000,
     description:
       'agi 4o',
-    displayName: 'Moonshot V1 128K',
+    displayName: 'agi 4o',
     enabled: true,
     id: 'agi-4o',
     type: 'chat',

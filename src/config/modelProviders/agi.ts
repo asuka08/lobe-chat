@@ -20,7 +20,7 @@ const Agi: ModelProviderCard = {
   id: 'agi',
   modelList: { showModelFetcher: true },
   modelsUrl: 'https://syngents.cn',
-  name: 'Moonshot',
+  name: 'Agi',
   proxyUrl: {
     placeholder: 'https://oneapi.zhiji.ai/v1',
   },
