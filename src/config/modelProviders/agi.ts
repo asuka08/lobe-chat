@@ -46,7 +46,7 @@ const Agi: ModelProviderCard = {
         'agi deepseek v3',
       displayName: 'agi-deepseek-v3',
       enabled: true,
-      functionCall: true,
+      // functionCall: true,
       id: 'agi-deepseek-v3',
     },
     {

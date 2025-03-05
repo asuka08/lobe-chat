@@ -71,7 +71,7 @@ const agiChatModels: AIChatModelCard[] = [
   },
   {
     abilities: {
-      functionCall: true,
+      // functionCall: true,
     },
     contextWindowTokens: 128_000,
     description:
