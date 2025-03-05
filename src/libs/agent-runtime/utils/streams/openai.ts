@@ -1,15 +1,15 @@
 import OpenAI from 'openai';
 import type { Stream } from 'openai/streaming';
 
-import { ChatMessageError } from '@/types/message';
+import { ChatMessageError, CitationItem, ModelTokensUsage } from '@/types/message';
 
 import { AgentRuntimeErrorType, ILobeAgentRuntimeErrorType } from '../../error';
 import { ChatStreamCallbacks } from '../../types';
 import {
   FIRST_CHUNK_ERROR_KEY,
+  StreamContext,
   StreamProtocolChunk,
   StreamProtocolToolCallChunk,
-  StreamStack,
   StreamToolCallChunkData,
   convertIterableToStream,
   createCallbacksTransformer,
@@ -18,10 +18,26 @@ import {
   generateToolCallId,
 } from './protocol';
 
+const convertUsage = (usage: OpenAI.Completions.CompletionUsage): ModelTokensUsage => {
+  return {
+    acceptedPredictionTokens: usage.completion_tokens_details?.accepted_prediction_tokens,
+    cachedTokens:
+      (usage as any).prompt_cache_hit_tokens || usage.prompt_tokens_details?.cached_tokens,
+    inputAudioTokens: usage.prompt_tokens_details?.audio_tokens,
+    inputCacheMissTokens: (usage as any).prompt_cache_miss_tokens,
+    inputTokens: usage.prompt_tokens,
+    outputAudioTokens: usage.completion_tokens_details?.audio_tokens,
+    outputTokens: usage.completion_tokens,
+    reasoningTokens: usage.completion_tokens_details?.reasoning_tokens,
+    rejectedPredictionTokens: usage.completion_tokens_details?.rejected_prediction_tokens,
+    totalTokens: usage.total_tokens,
+  };
+};
+
 export const transformOpenAIStream = (
   chunk: OpenAI.ChatCompletionChunk,
-  stack?: StreamStack,
-): StreamProtocolChunk => {
+  streamContext: StreamContext,
+): StreamProtocolChunk | StreamProtocolChunk[] => {
   // handle the first chunk error
   if (FIRST_CHUNK_ERROR_KEY in chunk) {
     delete chunk[FIRST_CHUNK_ERROR_KEY];
@@ -41,38 +57,56 @@ export const transformOpenAIStream = (
     // maybe need another structure to add support for multiple choices
     const item = chunk.choices[0];
     if (!item) {
+      if (chunk.usage) {
+        const usage = chunk.usage;
+        return { data: convertUsage(usage), id: chunk.id, type: 'usage' };
+      }
+
       return { data: chunk, id: chunk.id, type: 'data' };
     }
 
-    // tools calling
-    if (typeof item.delta?.tool_calls === 'object' && item.delta.tool_calls?.length > 0) {
-      return {
-        data: item.delta.tool_calls.map((value, index): StreamToolCallChunkData => {
-          if (stack && !stack.tool) {
-            stack.tool = { id: value.id!, index: value.index, name: value.function!.name! };
-          }
+    if (item && typeof item.delta?.tool_calls === 'object' && item.delta.tool_calls?.length > 0) {
+      // tools calling
+      const tool_calls = item.delta.tool_calls.filter(
+        (value) => value.index >= 0 || typeof value.index === 'undefined',
+      );
 
-          return {
-            function: {
-              arguments: value.function?.arguments ?? '{}',
-              name: value.function?.name ?? null,
-            },
-            id: value.id || stack?.tool?.id || generateToolCallId(index, value.function?.name),
+      if (tool_calls.length > 0) {
+        return {
+          data: item.delta.tool_calls.map((value, index): StreamToolCallChunkData => {
+            if (streamContext && !streamContext.tool) {
+              streamContext.tool = {
+                id: value.id!,
+                index: value.index,
+                name: value.function!.name!,
+              };
+            }
 
-            // mistral's tool calling don't have index and function field, it's data like:
-            // [{"id":"xbhnmTtY7","function":{"name":"lobe-image-designer____text2image____builtin","arguments":"{\"prompts\": [\"A photo of a small, fluffy dog with a playful expression and wagging tail.\", \"A watercolor painting of a small, energetic dog with a glossy coat and bright eyes.\", \"A vector illustration of a small, adorable dog with a short snout and perky ears.\", \"A drawing of a small, scruffy dog with a mischievous grin and a wagging tail.\"], \"quality\": \"standard\", \"seeds\": [123456, 654321, 111222, 333444], \"size\": \"1024x1024\", \"style\": \"vivid\"}"}}]
+            return {
+              function: {
+                arguments: value.function?.arguments ?? '{}',
+                name: value.function?.name ?? null,
+              },
+              id:
+                value.id ||
+                streamContext?.tool?.id ||
+                generateToolCallId(index, value.function?.name),
 
-            // minimax's tool calling don't have index field, it's data like:
-            // [{"id":"call_function_4752059746","type":"function","function":{"name":"lobe-image-designer____text2image____builtin","arguments":"{\"prompts\": [\"一个流浪的地球，背景是浩瀚"}}]
+              // mistral's tool calling don't have index and function field, it's data like:
+              // [{"id":"xbhnmTtY7","function":{"name":"lobe-image-designer____text2image____builtin","arguments":"{\"prompts\": [\"A photo of a small, fluffy dog with a playful expression and wagging tail.\", \"A watercolor painting of a small, energetic dog with a glossy coat and bright eyes.\", \"A vector illustration of a small, adorable dog with a short snout and perky ears.\", \"A drawing of a small, scruffy dog with a mischievous grin and a wagging tail.\"], \"quality\": \"standard\", \"seeds\": [123456, 654321, 111222, 333444], \"size\": \"1024x1024\", \"style\": \"vivid\"}"}}]
 
-            // so we need to add these default values
-            index: typeof value.index !== 'undefined' ? value.index : index,
-            type: value.type || 'function',
-          };
-        }),
-        id: chunk.id,
-        type: 'tool_calls',
-      } as StreamProtocolToolCallChunk;
+              // minimax's tool calling don't have index field, it's data like:
+              // [{"id":"call_function_4752059746","type":"function","function":{"name":"lobe-image-designer____text2image____builtin","arguments":"{\"prompts\": [\"一个流浪的地球，背景是浩瀚"}}]
+
+              // so we need to add these default values
+              index: typeof value.index !== 'undefined' ? value.index : index,
+              type: value.type || 'function',
+            };
+          }),
+          id: chunk.id,
+          type: 'tool_calls',
+        } as StreamProtocolToolCallChunk;
+      }
     }
 
     // 给定结束原因
@@ -82,6 +116,11 @@ export const transformOpenAIStream = (
 
       if (typeof item.delta?.content === 'string' && !!item.delta.content) {
         return { data: item.delta.content, id: chunk.id, type: 'text' };
+      }
+
+      if (chunk.usage) {
+        const usage = chunk.usage;
+        return { data: convertUsage(usage), id: chunk.id, type: 'usage' };
       }
 
       return { data: item.finish_reason, id: chunk.id, type: 'stop' };
@@ -114,6 +153,37 @@ export const transformOpenAIStream = (
       }
 
       if (typeof content === 'string') {
+        if (!streamContext?.returnedCitation) {
+          const citations =
+            // in Perplexity api, the citation is in every chunk, but we only need to return it once
+            ('citations' in chunk && chunk.citations) ||
+            // in Hunyuan api, the citation is in every chunk
+            ('search_info' in chunk && (chunk.search_info as any)?.search_results) ||
+            // in Wenxin api, the citation is in the first and last chunk
+            ('search_results' in chunk && chunk.search_results);
+
+          if (citations) {
+            streamContext.returnedCitation = true;
+
+            return [
+              {
+                data: {
+                  citations: (citations as any[]).map(
+                    (item) =>
+                      ({
+                        title: typeof item === 'string' ? item : item.title,
+                        url: typeof item === 'string' ? item : item.url,
+                      }) as CitationItem,
+                  ),
+                },
+                id: chunk.id,
+                type: 'grounding',
+              },
+              { data: content, id: chunk.id, type: 'text' },
+            ];
+          }
+        }
+
         return { data: content, id: chunk.id, type: 'text' };
       }
     }
@@ -164,7 +234,7 @@ export const OpenAIStream = (
   stream: Stream<OpenAI.ChatCompletionChunk> | ReadableStream,
   { callbacks, provider, bizErrorTypeTransformer }: OpenAIStreamOptions = {},
 ) => {
-  const streamStack: StreamStack = { id: '' };
+  const streamStack: StreamContext = { id: '' };
 
   const readableStream =
     stream instanceof ReadableStream ? stream : convertIterableToStream(stream);

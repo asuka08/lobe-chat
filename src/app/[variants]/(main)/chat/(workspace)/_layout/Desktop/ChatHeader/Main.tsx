@@ -11,13 +11,13 @@ import { Flexbox } from 'react-layout-kit';
 
 import { getCompanyInfo } from '@/const/company';
 import { DESKTOP_HEADER_ICON_SIZE } from '@/const/layoutTokens';
+import { useInitAgentConfig } from '@/hooks/useInitAgentConfig';
 import { useOpenChatSettings } from '@/hooks/useInterceptingRoutes';
 import { useGlobalStore } from '@/store/global';
 import { systemStatusSelectors } from '@/store/global/selectors';
 import { useSessionStore } from '@/store/session';
 import { sessionMetaSelectors, sessionSelectors } from '@/store/session/selectors';
 
-import { useInitAgentConfig } from '../../useInitAgentConfig';
 import Tags from './Tags';
 
 const Main = memo(() => {
@@ -43,7 +43,21 @@ const Main = memo(() => {
   const updateSystemStatus = useGlobalStore((s) => s.updateSystemStatus);
 
   return !init ? (
-    <Flexbox horizontal>
+    <Flexbox gap={4} horizontal>
+      {!isPinned && (
+        <ActionIcon
+          aria-label={t('agents')}
+          icon={showSessionPanel ? PanelLeftClose : PanelLeftOpen}
+          onClick={() => {
+            updateSystemStatus({
+              sessionsWidth: showSessionPanel ? 0 : 320,
+              showSessionPanel: !showSessionPanel,
+            });
+          }}
+          size={DESKTOP_HEADER_ICON_SIZE}
+          title={t('agents')}
+        />
+      )}
       <Skeleton
         active
         avatar={{ shape: 'circle', size: 'default' }}
