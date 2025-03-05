@@ -31,6 +31,15 @@
   },
   "duplicateTitle": "{{title}} Copia",
   "emptyAgent": "No hay asistente disponible",
+  "extendParams": {
+    "enableReasoning": {
+      "title": "Activar el pensamiento profundo"
+    },
+    "reasoningBudgetToken": {
+      "title": "Token de consumo de pensamiento"
+    },
+    "title": "Funcionalidad de extensión del modelo"
+  },
   "historyRange": "Rango de historial",
   "historySummary": "Resumen de mensajes históricos",
   "inbox": {
@@ -70,6 +79,35 @@
     "deleteDisabledByThreads": "Existen subtemas, no se puede eliminar",
     "regenerate": "Regenerar"
   },
+  "messages": {
+    "modelCard": {
+      "credit": "Créditos",
+      "creditPricing": "Precios",
+      "creditTooltip": "Para facilitar el conteo, convertimos 1$ en 1M créditos, por ejemplo, $3/M tokens se convierte en 3 créditos/token",
+      "pricing": {
+        "inputCachedTokens": "Entradas en caché {{amount}}/créditos · ${{amount}}/M",
+        "inputCharts": "${{amount}}/M caracteres",
+        "inputMinutes": "${{amount}}/minuto",
+        "inputTokens": "Entradas {{amount}}/créditos · ${{amount}}/M",
+        "outputTokens": "Salidas {{amount}}/créditos · ${{amount}}/M"
+      }
+    },
+    "tokenDetails": {
+      "input": "Entrada",
+      "inputAudio": "Entrada de audio",
+      "inputCached": "Entrada en caché",
+      "inputText": "Entrada de texto",
+      "inputTitle": "Detalles de entrada",
+      "inputUncached": "Entrada no en caché",
+      "output": "Salida",
+      "outputAudio": "Salida de audio",
+      "outputText": "Salida de texto",
+      "outputTitle": "Detalles de salida",
+      "reasoning": "Razonamiento profundo",
+      "title": "Detalles de generación",
+      "total": "Total consumido"
+    }
+  },
   "newAgent": "Nuevo asistente",
   "pin": "Fijar",
   "pinOff": "Desfijar",
@@ -84,6 +122,29 @@
   },
   "regenerate": "Regenerar",
   "roleAndArchive": "Rol y archivo",
+  "search": {
+    "grounding": {
+      "searchQueries": "Palabras clave de búsqueda",
+      "title": "Se han encontrado {{count}} resultados"
+    },
+    "mode": {
+      "auto": {
+        "desc": "Determina inteligentemente si se necesita buscar según el contenido de la conversación",
+        "title": "Conexión inteligente"
+      },
+      "disable": "El modelo actual no admite llamadas a funciones, por lo que no se puede utilizar la función de conexión inteligente",
+      "off": {
+        "desc": "Utiliza solo el conocimiento básico del modelo, sin realizar búsquedas en línea",
+        "title": "Desactivar conexión"
+      },
+      "on": {
+        "desc": "Realiza búsquedas en línea continuamente para obtener la información más reciente",
+        "title": "Siempre conectado"
+      },
+      "useModelBuiltin": "Utilizar el motor de búsqueda integrado del modelo"
+    },
+    "title": "Búsqueda en línea"
+  },
   "searchAgentPlaceholder": "Asistente de búsqueda...",
   "sendPlaceholder": "Escribe tu mensaje...",
   "sessionGroup": {

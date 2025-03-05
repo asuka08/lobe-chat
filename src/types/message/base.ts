@@ -1,6 +1,33 @@
+import { GroundingSearch } from '@/types/search';
+
+export interface CitationItem {
+  id?: string;
+  onlyUrl?: boolean;
+  title?: string;
+  url: string;
+}
+
 export interface ModelReasoning {
   content?: string;
   duration?: number;
+  signature?: string;
+}
+
+export interface ModelTokensUsage {
+  acceptedPredictionTokens?: number;
+  cachedTokens?: number;
+  inputAudioTokens?: number;
+  inputCacheMissTokens?: number;
+  inputTokens?: number;
+  outputAudioTokens?: number;
+  outputTokens?: number;
+  reasoningTokens?: number;
+  rejectedPredictionTokens?: number;
+  totalTokens?: number;
+}
+
+export interface MessageMetadata extends ModelTokensUsage {
+  tps?: number;
 }
 
 export type MessageRoleType = 'user' | 'system' | 'assistant' | 'tool';
@@ -13,6 +40,7 @@ export interface MessageItem {
   error: any | null;
   favorite: boolean | null;
   id: string;
+  metadata?: MessageMetadata | null;
   model: string | null;
   observationId: string | null;
   parentId: string | null;
@@ -20,6 +48,7 @@ export interface MessageItem {
   quotaId: string | null;
   reasoning: ModelReasoning | null;
   role: string;
+  search: GroundingSearch | null;
   sessionId: string | null;
   threadId: string | null;
   // jsonb type
