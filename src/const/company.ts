@@ -55,13 +55,13 @@ export const COMPANY_INFO = {
     companyName: '星座厨房',
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/starkitchen-os/icons/icon-192x192.png',
   },
-  syngents: {
+  syn: {
     agentInfo: {
       title: '新小智',
-      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syngents-os/icons/icon-agent.png',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syn-os/icons/icon-agent.png',
     },
     companyName: '新智体',
-    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syngents-os/icons/icon-192x192.png',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syn-os/icons/icon-192x192.png',
   },
 };
 
