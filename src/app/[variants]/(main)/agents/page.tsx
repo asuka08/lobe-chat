@@ -2,7 +2,7 @@
 
 import { createStyles } from 'antd-style';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import { getCompanyInfo } from '@/const/company';
@@ -16,8 +16,7 @@ import AgentsCards from './components/AgentsCards';
 import Header from './components/Header';
 import Menu from './components/Menu';
 
-// 这个界面是咱们拓展的不是lobe的 没使用lobe的既定架构和服务端渲染
-const AgentsPage = () => {
+const AgentsContent = () => {
   const useStyles = createStyles(({ css, token }) => ({
     container: css`
       // padding: ${token.paddingLG}px;
@@ -29,10 +28,8 @@ const AgentsPage = () => {
   const [topicList, setTopicList] = useState<any[]>([]);
   const [agentsList, setAgentsList] = useState<any[]>([]);
 
-  // 获取用户信息
   const userProfile = useUserStore(userProfileSelectors.userProfile);
 
-  // 打印用户信息
   useEffect(() => {
     console.log('当前用户信息:', userProfile);
   }, [userProfile]);
@@ -41,9 +38,9 @@ const AgentsPage = () => {
   const access_agent_company = useAccessAgentCompany();
   const company_for_frontend = useCompanyConfig();
 
-  // 检查权限
   useEffect(() => {
     const currentCompany = getCompanyInfo();
+    // 暂时注释掉未使用的变量
     const currentCompanyKey =
       Object.entries(company_for_frontend).find(
         ([, info]) => info.companyName === currentCompany?.companyName,
@@ -94,5 +91,11 @@ const AgentsPage = () => {
     </Flexbox>
   );
 };
+
+const AgentsPage = () => (
+  <Suspense>
+    <AgentsContent />
+  </Suspense>
+);
 
 export default AgentsPage;
