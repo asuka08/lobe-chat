@@ -4,6 +4,7 @@ import { createStyles } from 'antd-style';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 const useStyles = createStyles(({ css, token }) => ({
   back: css`
@@ -36,11 +37,11 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const IframePage = () => {
+const IframeContent = () => {
   const { cx, styles } = useStyles();
-
   const searchParams = useSearchParams();
   const url = searchParams.get('url');
+
   return (
     <div className={cx(styles.container)}>
       <div className={cx(styles.header)}>
@@ -58,5 +59,11 @@ const IframePage = () => {
     </div>
   );
 };
+
+const IframePage = () => (
+  <Suspense>
+    <IframeContent />
+  </Suspense>
+);
 
 export default IframePage;
