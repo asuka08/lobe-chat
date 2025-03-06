@@ -21,6 +21,8 @@ export const config = {
     '/(api|trpc|webapi)(.*)',
     // include the /
     '/',
+    '/agents',
+    '/agents(.*)',
     '/discover',
     '/discover(.*)',
     '/chat',

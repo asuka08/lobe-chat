@@ -1,9 +1,11 @@
 import { ActionIcon } from '@lobehub/ui';
-import { Compass, FolderClosed, MessageSquare } from 'lucide-react';
+import { Bot, Compass, FolderClosed, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { getCompanyInfo } from '@/const/company';
+import { useAccessAgentCompany, useCompanyConfig } from '@/store/config/hooks';
 import { useGlobalStore } from '@/store/global';
 import { SidebarTabKey } from '@/store/global/initialState';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
@@ -18,6 +20,18 @@ const TopActions = memo<TopActionProps>(({ tab, isPinned }) => {
   const { t } = useTranslation('common');
   const switchBackToChat = useGlobalStore((s) => s.switchBackToChat);
   const { showMarket, enableKnowledgeBase } = useServerConfigStore(featureFlagsSelectors);
+  const access_agent_company = useAccessAgentCompany();
+  const company_for_frontend = useCompanyConfig();
+
+  // 获取当前公司信息
+  const currentCompany = getCompanyInfo();
+  const currentCompanyKey =
+    Object.entries(company_for_frontend).find(
+      ([, info]) => info.companyName === currentCompany?.companyName,
+    )?.[0] || 'default';
+
+  // 检查当前公司是否有权限访问 agents
+  const canAccessAgents = access_agent_company.includes(currentCompanyKey);
 
   return (
     <>
@@ -56,6 +70,17 @@ const TopActions = memo<TopActionProps>(({ tab, isPinned }) => {
             placement={'right'}
             size="large"
             title={t('tab.discover')}
+          />
+        </Link>
+      )}
+      {canAccessAgents && (
+        <Link aria-label={t('tab.chat')} href={'/agents'}>
+          <ActionIcon
+            active={tab === SidebarTabKey.Agents && !isPinned}
+            icon={Bot}
+            placement={'right'}
+            size="large"
+            title={t('tab.agents')}
           />
         </Link>
       )}
