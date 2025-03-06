@@ -42,9 +42,9 @@ const AgentsContent = () => {
     const currentCompany = getCompanyInfo();
     console.log('🚀 ~ currentCompany:', currentCompany);
     const currentCompanyKey =
-      Object.entries(company_for_frontend).find(
-        ([, info]) => info.companyName === currentCompany?.companyName,
-      )?.[0] || 'default';
+      typeof window !== 'undefined'
+        ? window.location.href.match(/^https:\/\/(.*?)-os\.syngents\.cn/)?.[1] || 'default'
+        : 'default';
     console.log('🚀 ~ currentCompanyKey:', currentCompanyKey);
     console.log('🚀 ~ access_agent_company:', access_agent_company);
     if (!access_agent_company.includes(currentCompanyKey)) {

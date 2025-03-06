@@ -5,7 +5,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { getCompanyInfo } from '@/const/company';
-import { useAccessAgentCompany, useCompanyConfig } from '@/store/config/hooks';
+import { useAccessAgentCompany } from '@/store/config/hooks';
 import { useGlobalStore } from '@/store/global';
 import { SidebarTabKey } from '@/store/global/initialState';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
@@ -21,16 +21,15 @@ const TopActions = memo<TopActionProps>(({ tab, isPinned }) => {
   const switchBackToChat = useGlobalStore((s) => s.switchBackToChat);
   const { showMarket, enableKnowledgeBase } = useServerConfigStore(featureFlagsSelectors);
   const access_agent_company = useAccessAgentCompany();
-  const company_for_frontend = useCompanyConfig();
 
   // 获取当前公司信息
   const currentCompany = getCompanyInfo();
   console.log('🚀 ~ currentCompany:', currentCompany);
 
   const currentCompanyKey =
-    Object.entries(company_for_frontend).find(
-      ([, info]) => info.companyName === currentCompany?.companyName,
-    )?.[0] || 'default';
+    typeof window !== 'undefined'
+      ? window.location.href.match(/^https:\/\/(.*?)-os\.syngents\.cn/)?.[1] || 'default'
+      : 'default';
   console.log('🚀 ~ currentCompanyKey:', currentCompanyKey);
 
   // 检查当前公司是否有权限访问 agents
