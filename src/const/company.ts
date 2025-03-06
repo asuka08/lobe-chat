@@ -15,6 +15,14 @@ export const COMPANY_INFO = {
     companyName: 'AGI Transformer',
     logo: '/icons/icon-192x192.png',
   },
+  demo: {
+    agentInfo: {
+      title: '测试',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-agent.png',
+    },
+    companyName: '测试',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-192x192.png',
+  },
   fenxiang: {
     agentInfo: {
       title: '芬小香',

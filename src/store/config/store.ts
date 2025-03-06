@@ -17,16 +17,15 @@ export const useConfigStore = create<ConfigState>((set) => ({
   fetchConfig: async () => {
     try {
       set({ error: null, isLoading: true });
-      const res = await post('json_config/get_by_keys', {
+      const res: any = await post('json_config/get_by_keys', {
         keys: ['access_agent_company', 'company_for_frontend', 'redirect_company_url'],
       });
-
       set({
-        access_agent_company: res.data.access_agent_company || [],
-        company_for_frontend: res.data.company_for_frontend || {},
+        access_agent_company: res.access_agent_company || [],
+        company_for_frontend: res.company_for_frontend || {},
         error: null,
         isLoading: false,
-        redirect_company_url: res.data.redirect_company_url || [],
+        redirect_company_url: res.redirect_company_url || [],
       });
     } catch (error) {
       set({
