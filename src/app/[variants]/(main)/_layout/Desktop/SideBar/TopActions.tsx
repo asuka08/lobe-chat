@@ -25,14 +25,17 @@ const TopActions = memo<TopActionProps>(({ tab, isPinned }) => {
 
   // 获取当前公司信息
   const currentCompany = getCompanyInfo();
+  console.log('🚀 ~ currentCompany:', currentCompany);
+
   const currentCompanyKey =
     Object.entries(company_for_frontend).find(
       ([, info]) => info.companyName === currentCompany?.companyName,
     )?.[0] || 'default';
+  console.log('🚀 ~ currentCompanyKey:', currentCompanyKey);
 
   // 检查当前公司是否有权限访问 agents
   const canAccessAgents = access_agent_company.includes(currentCompanyKey);
-
+  console.log('🚀 ~ canAccessAgents:', canAccessAgents);
   return (
     <>
       <Link

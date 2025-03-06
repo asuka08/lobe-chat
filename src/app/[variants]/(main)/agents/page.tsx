@@ -40,12 +40,13 @@ const AgentsContent = () => {
 
   useEffect(() => {
     const currentCompany = getCompanyInfo();
-    // 暂时注释掉未使用的变量
+    console.log('🚀 ~ currentCompany:', currentCompany);
     const currentCompanyKey =
       Object.entries(company_for_frontend).find(
         ([, info]) => info.companyName === currentCompany?.companyName,
       )?.[0] || 'default';
-
+    console.log('🚀 ~ currentCompanyKey:', currentCompanyKey);
+    console.log('🚀 ~ access_agent_company:', access_agent_company);
     if (!access_agent_company.includes(currentCompanyKey)) {
       router.replace('/chat');
     }
