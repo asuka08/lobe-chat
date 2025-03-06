@@ -34,7 +34,7 @@ const TopActions = memo<TopActionProps>(({ tab, isPinned }) => {
 
   // 检查当前公司是否有权限访问 agents
   const canAccessAgents = access_agent_company.includes(currentCompanyKey);
-  console.log('🚀 ~ canAccessAgents:', canAccessAgents);
+  console.log('🚀 ~ canAccessAgents:', canAccessAgents, access_agent_company);
   return (
     <>
       <Link
