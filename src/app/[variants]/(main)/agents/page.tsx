@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useMemo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { getCompanyInfo } from '@/const/company';
 import { useAccessAgentCompany, useCompanyConfig } from '@/store/config/hooks';
 import { useUserStore } from '@/store/user';
 import { userProfileSelectors } from '@/store/user/selectors';
@@ -39,14 +38,11 @@ const AgentsContent = () => {
   const company_for_frontend = useCompanyConfig();
 
   useEffect(() => {
-    const currentCompany = getCompanyInfo();
-    console.log('🚀 ~ currentCompany:', currentCompany);
     const currentCompanyKey =
       typeof window !== 'undefined'
         ? window.location.href.match(/^https:\/\/(.*?)-os\.syngents\.cn/)?.[1] || 'default'
         : 'default';
-    console.log('🚀 ~ currentCompanyKey:', currentCompanyKey);
-    console.log('🚀 ~ access_agent_company:', access_agent_company);
+
     if (!access_agent_company.includes(currentCompanyKey)) {
       router.replace('/chat');
     }

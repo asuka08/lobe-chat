@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getCompanyInfo } from '@/const/company';
 import { useAccessAgentCompany } from '@/store/config/hooks';
 import { useGlobalStore } from '@/store/global';
 import { SidebarTabKey } from '@/store/global/initialState';
@@ -23,18 +22,14 @@ const TopActions = memo<TopActionProps>(({ tab, isPinned }) => {
   const access_agent_company = useAccessAgentCompany();
 
   // 获取当前公司信息
-  const currentCompany = getCompanyInfo();
-  console.log('🚀 ~ currentCompany:', currentCompany);
-
   const currentCompanyKey =
     typeof window !== 'undefined'
       ? window.location.href.match(/^https:\/\/(.*?)-os\.syngents\.cn/)?.[1] || 'default'
       : 'default';
-  console.log('🚀 ~ currentCompanyKey:', currentCompanyKey);
 
   // 检查当前公司是否有权限访问 agents
   const canAccessAgents = access_agent_company.includes(currentCompanyKey);
-  console.log('🚀 ~ canAccessAgents:', canAccessAgents, access_agent_company);
+
   return (
     <>
       <Link
