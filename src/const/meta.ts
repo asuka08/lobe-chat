@@ -1,5 +1,5 @@
-import { MetaData } from '@/types/meta';
 import { getCompanyInfo } from '@/const/company';
+import { MetaData } from '@/types/meta';
 
 export const DEFAULT_AVATAR = '🤖';
 export const DEFAULT_USER_AVATAR = '😀';

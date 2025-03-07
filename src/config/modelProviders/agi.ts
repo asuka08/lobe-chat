@@ -12,6 +12,7 @@ const Agi: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'agi-4o',
+      vision: true,
     },
     {
       contextWindowTokens: 128_000,
@@ -21,6 +22,7 @@ const Agi: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'agi-4o-mini',
+      vision: true,
     },
     {
       contextWindowTokens: 128_000,
@@ -30,6 +32,7 @@ const Agi: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'agi-sonnet-3-5',
+      vision: true,
     },
     {
       contextWindowTokens: 128_000,
@@ -39,6 +42,7 @@ const Agi: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'agi-sonnet-3-7',
+      vision: true,
     },
     {
       contextWindowTokens: 128_000,

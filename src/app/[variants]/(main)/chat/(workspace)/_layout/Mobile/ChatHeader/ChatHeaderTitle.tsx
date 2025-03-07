@@ -26,7 +26,9 @@ const ChatHeaderTitle = memo(() => {
   ]);
   const theme = useTheme();
 
-  const displayTitle = isInbox ? t('inbox.title', {agentName: getCompanyInfo()?.agentInfo?.title}) : title;
+  const displayTitle = isInbox
+    ? t('inbox.title', { agentName: getCompanyInfo()?.agentInfo?.title })
+    : title;
 
   return (
     <MobileNavBarTitle

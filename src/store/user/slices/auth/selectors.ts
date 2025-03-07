@@ -2,9 +2,9 @@ import { t } from 'i18next';
 
 import { enableAuth, enableClerk, enableNextAuth } from '@/const/auth';
 import { BRANDING_NAME } from '@/const/branding';
+import { getCompanyInfo } from '@/const/company';
 import { UserStore } from '@/store/user';
 import { LobeUser } from '@/types/user';
-import { getCompanyInfo } from '@/const/company';
 
 const DEFAULT_USERNAME = BRANDING_NAME;
 

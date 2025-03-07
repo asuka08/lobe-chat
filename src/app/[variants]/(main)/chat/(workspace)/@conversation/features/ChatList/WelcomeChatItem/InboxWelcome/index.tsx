@@ -7,11 +7,9 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import { BRANDING_NAME } from '@/const/branding';
+import { getCompanyInfo } from '@/const/company';
 import { useGreeting } from '@/hooks/useGreeting';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
-import { getCompanyInfo } from '@/const/company';
-
-
 
 const useStyles = createStyles(({ css, responsive }) => ({
   container: css`

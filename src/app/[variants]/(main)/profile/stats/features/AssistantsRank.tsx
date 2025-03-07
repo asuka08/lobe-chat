@@ -7,8 +7,8 @@ import qs from 'query-string';
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
-import { getCompanyInfo } from '@/const/company';
 
+import { getCompanyInfo } from '@/const/company';
 import { FORM_STYLE } from '@/const/layoutTokens';
 import { DEFAULT_AVATAR } from '@/const/meta';
 import { INBOX_SESSION_ID } from '@/const/session';

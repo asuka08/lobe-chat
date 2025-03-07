@@ -155,6 +155,7 @@
     "ai": "^3.4.33",
     "antd": "^5.23.0",
     "antd-style": "^3.7.1",
+    "axios": "^1.8.1",
     "brotli-wasm": "^3.0.1",
     "chroma-js": "^3.1.2",
     "countries-and-timezones": "^3.7.2",

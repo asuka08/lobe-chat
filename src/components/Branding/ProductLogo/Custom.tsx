@@ -4,10 +4,9 @@ import { createStyles, useTheme } from 'antd-style';
 import Image, { ImageProps } from 'next/image';
 import { ReactNode, forwardRef, memo } from 'react';
 import { Flexbox, FlexboxProps } from 'react-layout-kit';
-import { getCompanyInfo } from '@/const/company';
-
 
 import { BRANDING_NAME } from '@/const/branding';
+import { getCompanyInfo } from '@/const/company';
 
 const useStyles = createStyles(({ css }) => {
   return {

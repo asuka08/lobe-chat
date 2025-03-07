@@ -4,6 +4,7 @@ const agiChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
+      vision: true,
     },
     contextWindowTokens: 128_000,
     description:
@@ -21,6 +22,7 @@ const agiChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
+      vision: true,
     },
     contextWindowTokens: 128_000,
     description:
@@ -38,6 +40,7 @@ const agiChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
+      vision: true,
     },
     contextWindowTokens: 200_000,
     description:
@@ -55,6 +58,7 @@ const agiChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
+      vision: true,
     },
     contextWindowTokens: 200_000,
     description:

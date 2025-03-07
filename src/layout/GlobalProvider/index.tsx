@@ -4,6 +4,7 @@ import { appEnv } from '@/config/app';
 import { getServerFeatureFlagsValue } from '@/config/featureFlags';
 import DevPanel from '@/features/DevPanel';
 import { getServerGlobalConfig } from '@/server/globalConfig';
+import { ConfigProvider } from '@/store/config/Provider';
 import { ServerConfigStoreProvider } from '@/store/serverConfig/Provider';
 import { getAntdLocale } from '@/utils/locale';
 
@@ -54,13 +55,15 @@ const GlobalLayout = async ({
             isMobile={isMobile}
             serverConfig={serverConfig}
           >
-            <QueryProvider>{children}</QueryProvider>
-            <StoreInitialization />
-            <Suspense>
-              <ImportSettings />
-              <ReactScan />
-              {process.env.NODE_ENV === 'development' && <DevPanel />}
-            </Suspense>
+            <ConfigProvider>
+              <QueryProvider>{children}</QueryProvider>
+              <StoreInitialization />
+              <Suspense>
+                <ImportSettings />
+                <ReactScan />
+                {process.env.NODE_ENV === 'development' && <DevPanel />}
+              </Suspense>
+            </ConfigProvider>
           </ServerConfigStoreProvider>
         </AppTheme>
         <AntdV5MonkeyPatch />

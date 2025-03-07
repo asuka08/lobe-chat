@@ -1,10 +1,10 @@
 import { t } from 'i18next';
 
+import { getCompanyInfo } from '@/const/company';
 import { DEFAULT_AVATAR, DEFAULT_BACKGROUND_COLOR, DEFAULT_INBOX_AVATAR } from '@/const/meta';
 import { SessionStore } from '@/store/session';
 import { MetaData } from '@/types/meta';
 import { merge } from '@/utils/merge';
-import { getCompanyInfo } from '@/const/company';
 
 import { sessionSelectors } from './list';
 
@@ -16,7 +16,9 @@ const currentAgentMeta = (s: SessionStore): MetaData => {
     avatar: isInbox ? DEFAULT_INBOX_AVATAR : DEFAULT_AVATAR,
     backgroundColor: DEFAULT_BACKGROUND_COLOR,
     description: isInbox ? t('inbox.desc', { ns: 'chat' }) : undefined,
-    title: isInbox ? t('inbox.title', { agentName: getCompanyInfo()?.agentInfo?.title, ns: 'chat' }) : t('defaultSession'),
+    title: isInbox
+      ? t('inbox.title', { agentName: getCompanyInfo()?.agentInfo?.title, ns: 'chat' })
+      : t('defaultSession'),
   };
 
   const session = sessionSelectors.currentSession(s);
