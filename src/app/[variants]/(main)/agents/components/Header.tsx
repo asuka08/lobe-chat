@@ -30,7 +30,7 @@ const Header = () => {
       direction={'horizontal'}
       width={'100%'}
     >
-      高级agent
+      企业专区
       {/* <div className={cx(styles.desc)}>为您提供超级无敌的agents助手, 帮您解决工作中的问题</div> */}
     </Flexbox>
   );
