@@ -54,25 +54,45 @@ const AgentsContent = () => {
   }, [searchParams]);
 
   useEffect(() => {
-    post('assistant/topic/list').then((res: any) => {
-      const list = res.map((item: any) => {
-        const Icon = getIconByKey(item);
-        return {
-          icon: <Icon size={16} />,
-          key: item,
-          label: item,
-        };
-      });
+    post('/assistant/topic/list/v2').then((res: any) => {
       const AllIcon = getIconByKey('全部');
-      setTopicList([{ icon: <AllIcon size={16} />, key: 'all', label: '全部' }, ...list]);
+      // 为每个菜单项添加图标
+      const processedList = res.map((category: any) => {
+        const CategoryIcon = getIconByKey(category.label);
+        const baseItem = {
+          icon: <CategoryIcon size={16} />,
+          key: category.key,
+          label: category.label,
+        };
+
+        // 只有通用类别才有子菜单
+        if (category.children) {
+          return {
+            ...baseItem,
+            children: category.children.map((subItem: any) => {
+              const SubIcon = getIconByKey(subItem.label);
+              return {
+                icon: <SubIcon size={16} />,
+                key: subItem.key,
+                label: subItem.label,
+              };
+            }),
+          };
+        }
+
+        return baseItem;
+      });
+
+      setTopicList([{ icon: <AllIcon size={16} />, key: 'all', label: '全部' }, ...processedList]);
     });
   }, []);
 
   useEffect(() => {
+    const topic = selectedKey === 'all' ? undefined : selectedKey;
     post('/assistant/list_by_topic', {
       page_number: 1,
       page_size: 100,
-      topic: selectedKey === 'all' ? undefined : selectedKey,
+      topic,
     }).then((res: any) => {
       setAgentsList(res);
     });
