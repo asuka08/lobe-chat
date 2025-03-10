@@ -81,6 +81,13 @@ export const getCompanyInfo = () => {
     const companyKey: CompanyKeys = (match ? match[1] : 'default') as CompanyKeys;
     return COMPANY_INFO[companyKey] || COMPANY_INFO['default'];
   } else {
-    return COMPANY_INFO['default'];
+    return {
+      agentInfo: {
+        title: '',
+        url: '',
+      },
+      companyName: '',
+      logo: '',
+    };
   }
 };
