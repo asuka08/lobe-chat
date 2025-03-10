@@ -1,7 +1,7 @@
 import { createStyles } from 'antd-style';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import CategoryMenu from '../../discover/components/CategoryMenu';
@@ -33,6 +33,36 @@ const Menu = ({ topicList, selectedKey }: { selectedKey: string; topicList: Topi
   const router = useRouter();
   const pathname = usePathname();
   const { styles, cx } = useStyles();
+
+  // 获取默认展开的菜单项
+  const defaultOpenKeys = useMemo(() => {
+    const findParentKey = (
+      items: TopicItem[],
+      targetKey: string,
+      parentKeys: string[] = [],
+    ): string[] => {
+      for (const item of items) {
+        if (item.children) {
+          if (item.children.some((child) => child.key === targetKey)) {
+            return [...parentKeys, item.key];
+          }
+          const found = findParentKey(item.children, targetKey, [...parentKeys, item.key]);
+          if (found.length) return found;
+        }
+      }
+      return [];
+    };
+
+    return findParentKey(topicList, selectedKey);
+  }, [selectedKey, topicList]);
+
+  // 添加 openKeys 状态
+  const [openKeys, setOpenKeys] = useState<string[]>(defaultOpenKeys);
+
+  // 当 defaultOpenKeys 变化时，同步更新 openKeys
+  useEffect(() => {
+    setOpenKeys(defaultOpenKeys);
+  }, [defaultOpenKeys]);
 
   const handleSelect = ({ key }: { key: string }) => {
     if (key === 'all') {
@@ -89,14 +119,16 @@ const Menu = ({ topicList, selectedKey }: { selectedKey: string; topicList: Topi
       };
     });
   };
-
+  console.log('🚀 ~ defaultOpenKeys:', defaultOpenKeys);
   return (
     <Flexbox className={cx(styles.container)} padding={'10px'} width={'150px'}>
       <CategoryMenu
+        defaultOpenKeys={defaultOpenKeys}
         items={renderMenuItems(topicList)}
-        onOpenChange={(openKeys) => {
+        onOpenChange={(keys) => {
+          setOpenKeys(keys);
           // 获取最后打开的菜单项
-          const lastOpenKey = openKeys.at(-1);
+          const lastOpenKey = keys.at(-1);
           if (!lastOpenKey) return;
 
           // 查找打开的菜单项
@@ -119,6 +151,7 @@ const Menu = ({ topicList, selectedKey }: { selectedKey: string; topicList: Topi
           }
         }}
         onSelect={handleSelect}
+        openKeys={openKeys}
         selectedKeys={[selectedKey || 'all']}
       />
     </Flexbox>
