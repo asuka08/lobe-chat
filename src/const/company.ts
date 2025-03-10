@@ -71,18 +71,16 @@ type CompanyKeys = keyof typeof COMPANY_INFO;
 export const getCompanyInfo = () => {
   let currentUrl = typeof window !== 'undefined' ? window.location.href : '';
 
-  if (currentUrl && (currentUrl.includes('os.syngents.cn') || currentUrl.includes('localhost'))) {
+  if (
+    currentUrl &&
+    (currentUrl.includes('os.syngents.cn') ||
+      currentUrl.includes('localhost') ||
+      currentUrl.includes('lobedemo.syngents.cn'))
+  ) {
     const match = currentUrl.match(/^https:\/\/(.*?)-os\.syngents\.cn/);
     const companyKey: CompanyKeys = (match ? match[1] : 'default') as CompanyKeys;
     return COMPANY_INFO[companyKey] || COMPANY_INFO['default'];
   } else {
-    return {
-      agentInfo: {
-        title: '',
-        url: '',
-      },
-      companyName: '',
-      logo: '',
-    };
+    return COMPANY_INFO['default'];
   }
 };
