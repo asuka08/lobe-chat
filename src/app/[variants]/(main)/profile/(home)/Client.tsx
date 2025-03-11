@@ -38,12 +38,12 @@ const Client = memo<{ mobile?: boolean }>(() => {
         label: t('profile.username'),
         minWidth: undefined,
       },
-      {
-        children: userProfile?.email || '--',
-        hidden: !isLoginWithNextAuth || !userProfile?.email,
-        label: t('profile.email'),
-        minWidth: undefined,
-      },
+      // {
+      //   children: userProfile?.email || '--',
+      //   hidden: !isLoginWithNextAuth || !userProfile?.email,
+      //   label: t('profile.email'),
+      //   minWidth: undefined,
+      // },
       {
         children: <SSOProvidersList />,
         hidden: !isLoginWithNextAuth,

@@ -1,5 +1,6 @@
 import { AiFullModelCard, LobeDefaultAiModelListItem } from '@/types/aiModel';
 
+import { default as agi } from './agi';
 import { default as ai21 } from './ai21';
 import { default as ai360 } from './ai360';
 import { default as anthropic } from './anthropic';
@@ -69,6 +70,7 @@ const buildDefaultModelList = (map: ModelsMap): LobeDefaultAiModelListItem[] => 
 };
 
 export const LOBE_DEFAULT_MODEL_LIST = buildDefaultModelList({
+  agi,
   ai21,
   ai360,
   anthropic,
@@ -119,6 +121,7 @@ export const LOBE_DEFAULT_MODEL_LIST = buildDefaultModelList({
   zhipu,
 });
 
+export { default as agi } from './agi';
 export { default as ai21 } from './ai21';
 export { default as ai360 } from './ai360';
 export { default as anthropic } from './anthropic';

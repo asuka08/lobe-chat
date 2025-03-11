@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  REGISTRY_IMAGE: lobehub/lobe-chat-database
+  REGISTRY_IMAGE: asuka08/lobe-chat-database
   PR_TAG_PREFIX: pr-
 
 jobs:
@@ -28,8 +28,6 @@ jobs:
         include:
           - platform: linux/amd64
             os: ubuntu-latest
-          - platform: linux/arm64
-            os: ubuntu-24.04-arm
     runs-on: ${{ matrix.os }}
     name: Build ${{ matrix.platform }} Image
     steps:

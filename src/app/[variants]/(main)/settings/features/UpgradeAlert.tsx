@@ -15,8 +15,8 @@ const UpgradeAlert = memo(() => {
   const { t } = useTranslation('common');
 
   if (!hasNewVersion) return;
-
-  return (
+  // 隐藏更新提示modal
+  return <></> || (
     <Alert
       closable
       message={

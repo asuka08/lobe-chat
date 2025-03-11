@@ -45,7 +45,8 @@ const TelemetryNotification = memo<{ mobile?: boolean }>(({ mobile }) => {
     updatePreference({ telemetry });
     mutate();
   };
-
+  // TODO:Sy: 尝试获取用户使用信息弹层 => 隐藏
+  return null;
   return (
     <Notification mobile={mobile} show={showModal} showCloseIcon={false}>
       <Flexbox>

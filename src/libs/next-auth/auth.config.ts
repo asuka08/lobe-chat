@@ -38,6 +38,14 @@ export default {
       }
       return session;
     },
+    // [wysh end]
+    async redirect({ url, baseUrl }) {
+
+      const urlObj = new URL(url);
+      const strippedUrl = `${urlObj.protocol}//${urlObj.hostname}`;
+      return strippedUrl;
+    }
+    // [wysh end]
   },
   debug: authEnv.NEXT_AUTH_DEBUG,
   pages: {

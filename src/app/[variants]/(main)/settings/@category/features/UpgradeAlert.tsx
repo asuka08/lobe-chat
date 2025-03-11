@@ -11,7 +11,8 @@ const UpgradeAlert = memo(() => {
   const [hasNewVersion, latestVersion] = useGlobalStore((s) => [s.hasNewVersion, s.latestVersion]);
   const { t } = useTranslation('common');
 
-  if (!hasNewVersion) return null;
+  // 隐藏更新提示modal
+  if (!hasNewVersion || true) return null;
 
   return (
     <Alert

@@ -9,8 +9,10 @@ import WelcomeMessage from './WelcomeMessage';
 const WelcomeChatItem = memo(() => {
   const showInboxWelcome = useChatStore(chatSelectors.showInboxWelcome);
 
+  // 如果是默认agent，则显示默认欢迎消息
   if (showInboxWelcome) return <InboxWelcome />;
 
+  // 如果是自定义agent，则显示自定义欢迎消息
   return <WelcomeMessage />;
 });
 

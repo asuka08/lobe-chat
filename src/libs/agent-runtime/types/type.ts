@@ -73,6 +73,7 @@ export enum ModelProvider {
   XAI = 'xai',
   ZeroOne = 'zeroone',
   ZhiPu = 'zhipu',
+  Agi = 'agi',
 }
 
 export type ModelProviderKey = Lowercase<keyof typeof ModelProvider>;

@@ -5,7 +5,8 @@ import Image, { ImageProps } from 'next/image';
 import { ReactNode, forwardRef, memo } from 'react';
 import { Flexbox, FlexboxProps } from 'react-layout-kit';
 
-import { BRANDING_LOGO_URL, BRANDING_NAME } from '@/const/branding';
+import { BRANDING_NAME } from '@/const/branding';
+import { getCompanyInfo } from '@/const/company';
 
 const useStyles = createStyles(({ css }) => {
   return {
@@ -39,7 +40,7 @@ const CustomImageLogo = memo<Omit<ImageProps, 'alt' | 'src'> & { size: number }>
       <Image
         alt={BRANDING_NAME}
         height={size}
-        src={BRANDING_LOGO_URL}
+        src={getCompanyInfo().logo}
         unoptimized={true}
         width={size}
         {...rest}
@@ -70,7 +71,6 @@ const CustomLogo = memo<LobeChatProps>(({ extra, size = 32, className, style, ty
   const theme = useTheme();
   const { styles } = useStyles();
   let logoComponent: ReactNode;
-
   switch (type) {
     case '3d':
     case 'flat': {

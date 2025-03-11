@@ -16,6 +16,9 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
 const nextConfig: NextConfig = {
   basePath,
   compress: isProd,
+  eslint: {
+    ignoreDuringBuilds: buildWithDocker,
+  },
   experimental: {
     optimizePackageImports: [
       'emoji-mart',
@@ -111,6 +114,7 @@ const nextConfig: NextConfig = {
     },
   },
   output: buildWithDocker ? 'standalone' : undefined,
+  productionBrowserSourceMaps: false,
   outputFileTracingIncludes: buildWithDocker
     ? { '*': ['public/**/*', '.next/static/**/*'] }
     : undefined,
@@ -187,9 +191,13 @@ const nextConfig: NextConfig = {
     },
   ],
   // when external packages in dev mode with turbopack, this config will lead to bundle error
-  serverExternalPackages: isProd ? ['@electric-sql/pglite'] : undefined,
-
+serverExternalPackages: isProd ? ['@electric-sql/pglite'] : undefined,
+  
   transpilePackages: ['pdfjs-dist', 'mermaid'],
+
+  typescript: {
+    ignoreBuildErrors: buildWithDocker,
+  },
 
   webpack(config) {
     config.experiments = {

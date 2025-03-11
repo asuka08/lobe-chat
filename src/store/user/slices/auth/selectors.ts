@@ -2,6 +2,7 @@ import { t } from 'i18next';
 
 import { enableAuth, enableClerk, enableNextAuth } from '@/const/auth';
 import { BRANDING_NAME } from '@/const/branding';
+import { getCompanyInfo } from '@/const/company';
 import { UserStore } from '@/store/user';
 import { LobeUser } from '@/types/user';
 
@@ -20,7 +21,8 @@ const username = (s: UserStore) => {
 
   if (s.isSignedIn) return s.user?.username;
 
-  return 'anonymous';
+  // return 'anonymous';
+  return getCompanyInfo().agentInfo.title;
 };
 
 export const userProfileSelectors = {

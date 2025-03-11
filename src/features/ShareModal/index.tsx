@@ -58,8 +58,11 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
           style={{ width: '100%' }}
           value={tab}
         />
+        {/* 截图tab */}
         {tab === Tab.Screenshot && <ShareImage mobile={isMobile} />}
+        {/* 文本tab */}
         {tab === Tab.Text && <ShareText />}
+        {/* JSON tab */}
         {tab === Tab.JSON && <ShareJSON />}
       </Flexbox>
     </Modal>

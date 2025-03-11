@@ -28,6 +28,8 @@ export class Manifest {
     id,
     icons,
     screenshots,
+    start_url,
+    short_name,
   }: {
     color?: string;
     description: string;
@@ -35,6 +37,8 @@ export class Manifest {
     id: string;
     name: string;
     screenshots: ScreenshotItem[];
+    short_name?: string;
+    start_url?: string;
   }) {
     return {
       background_color: color,
@@ -51,7 +55,7 @@ export class Manifest {
       id: id,
       immutable: 'true',
       max_age: MAX_AGE,
-      name: name,
+      name: name ||  'Syngents',
       orientation: 'portrait',
       related_applications: [
         {
@@ -61,9 +65,9 @@ export class Manifest {
       ],
       scope: '/',
       screenshots: screenshots.map((item) => this._getScreenshot(item)),
-      short_name: name,
+      short_name: short_name || 'Syngents',
       splash_pages: null,
-      start_url: '/chat',
+      start_url: start_url || '/chat',
       tab_strip: {
         new_tab_button: {
           url: '/chat',

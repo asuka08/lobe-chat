@@ -19,6 +19,7 @@ export const useSwitchSession = () => {
       togglePortal(false);
 
       const chatPath = '/chat';
+      //TODO:Sy 移动端且当前路由路径非/chat时跳转
       if (mobile || pathname !== chatPath) {
         setTimeout(() => {
           router.push(chatPath, {

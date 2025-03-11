@@ -64,13 +64,26 @@ export interface AssistantCardProps
   extends Omit<DiscoverAssistantItem, 'suggestions' | 'socialData' | 'config'> {
   className?: string;
   href: string;
+  showAuthorAvatar?: boolean;
   showCategory?: boolean;
   style?: CSSProperties;
+  tagNoClick?: boolean;
   variant?: 'default' | 'compact';
 }
 
 const AssistantCard = memo<AssistantCardProps>(
-  ({ showCategory, className, meta, createdAt, author, variant, style, href }) => {
+  ({
+    showCategory,
+    className,
+    meta,
+    createdAt,
+    author,
+    variant,
+    style,
+    href,
+    showAuthorAvatar = true,
+    tagNoClick,
+  }) => {
     const { avatar, title, description, tags = [], category } = meta;
     const { cx, styles, theme } = useStyles();
     const categoryItem = useCategoryItem(category, 12);
@@ -83,7 +96,7 @@ const AssistantCard = memo<AssistantCardProps>(
         horizontal
         style={{ color: theme.colorTextSecondary, fontSize: 12 }}
       >
-        <GitHubAvatar size={18} username={author} />
+        {showAuthorAvatar && <GitHubAvatar size={18} username={author} />}
         <span>{author}</span>
       </Flexbox>
     );
@@ -165,11 +178,17 @@ const AssistantCard = memo<AssistantCardProps>(
 
           <Flexbox gap={6} horizontal style={{ flexWrap: 'wrap' }}>
             {showCategory && categoryItem ? (
-              <Link href={urlJoin('/discover/assistants', categoryItem.key)}>
+              tagNoClick ? (
                 <Tag icon={categoryItem.icon} style={{ margin: 0 }}>
                   {categoryItem.label}
                 </Tag>
-              </Link>
+              ) : (
+                <Link href={urlJoin('/discover/assistants', categoryItem.key)}>
+                  <Tag icon={categoryItem.icon} style={{ margin: 0 }}>
+                    {categoryItem.label}
+                  </Tag>
+                </Link>
+              )
             ) : (
               tags
                 .slice(0, 4)
@@ -179,7 +198,11 @@ const AssistantCard = memo<AssistantCardProps>(
                     query: { q: tag, type: 'assistants' },
                     url: '/discover/search',
                   });
-                  return (
+                  return tagNoClick ? (
+                    <Tag key={index} style={{ margin: 0 }}>
+                      {startCase(tag).trim()}
+                    </Tag>
+                  ) : (
                     <Link href={url} key={index}>
                       <Tag style={{ margin: 0 }}>{startCase(tag).trim()}</Tag>
                     </Link>

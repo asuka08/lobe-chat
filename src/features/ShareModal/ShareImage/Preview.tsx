@@ -5,13 +5,13 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { ProductLogo } from '@/components/Branding';
+import { getCompanyInfo } from '@/const/company';
 import PluginTag from '@/features/PluginTag';
 import { useAgentStore } from '@/store/agent';
 import { agentSelectors } from '@/store/agent/selectors';
 import { useSessionStore } from '@/store/session';
 import { sessionMetaSelectors, sessionSelectors } from '@/store/session/selectors';
 
-import pkg from '../../../../package.json';
 import { useContainerStyles } from '../style';
 import ChatList from './ChatList';
 import { useStyles } from './style';
@@ -35,7 +35,9 @@ const Preview = memo<FieldType & { title?: string }>(
     const { styles } = useStyles(withBackground);
     const { styles: containerStyles } = useContainerStyles();
 
-    const displayTitle = isInbox ? t('inbox.title') : title;
+    const displayTitle = isInbox
+      ? t('inbox.title', { agentName: getCompanyInfo()?.agentInfo?.title })
+      : title;
     const displayDesc = isInbox ? t('inbox.desc') : description;
 
     return (
@@ -66,7 +68,7 @@ const Preview = memo<FieldType & { title?: string }>(
             {withFooter ? (
               <Flexbox align={'center'} className={styles.footer} gap={4}>
                 <ProductLogo type={'combine'} />
-                <div className={styles.url}>{pkg.homepage}</div>
+                {/* <div className={styles.url}>{pkg.homepage}</div> */}
               </Flexbox>
             ) : (
               <div />

@@ -18,7 +18,8 @@ const Header = memo(() => {
           <ProductLogo extra={'Discover'} size={36} type={'text'} />
         </Link>
       }
-      right={!isCustomBranding && <CreateButton />}
+      // TODO:sy 隐藏创作按钮
+      right={!isCustomBranding && false && <CreateButton />}
       style={{
         position: 'relative',
         zIndex: 10,

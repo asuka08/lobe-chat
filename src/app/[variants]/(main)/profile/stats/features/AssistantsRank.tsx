@@ -8,6 +8,7 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import { getCompanyInfo } from '@/const/company';
 import { FORM_STYLE } from '@/const/layoutTokens';
 import { DEFAULT_AVATAR } from '@/const/meta';
 import { INBOX_SESSION_ID } from '@/const/session';
@@ -50,7 +51,7 @@ export const AssistantsRank = memo(() => {
         <Link href={link} style={{ color: 'inherit' }}>
           {item.title
             ? item.id === INBOX_SESSION_ID
-              ? t('inbox.title', { ns: 'chat' })
+              ? t('inbox.title', { agentName: getCompanyInfo()?.agentInfo?.title, ns: 'chat' })
               : item.title
             : t('defaultAgent', { ns: 'chat' })}
         </Link>

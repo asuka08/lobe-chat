@@ -25,10 +25,13 @@ const Content = memo<ListProps>(({ mobile }) => {
     [mobile],
   );
 
+  // 如果当前聊天没有加载，则显示骨架屏
   if (!isCurrentChatLoaded) return <SkeletonList mobile={mobile} />;
 
+  // 如果当前聊天没有消息，则显示欢迎消息
   if (data.length === 0) return <Welcome />;
 
+  // 如果当前聊天有消息，则显示消息列表
   return <VirtualizedList dataSource={data} itemContent={itemContent} mobile={mobile} />;
 });
 

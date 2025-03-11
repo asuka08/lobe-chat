@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { getCompanyInfo } from '@/const/company';
 import { DEFAULT_INBOX_AVATAR } from '@/const/meta';
 import { INBOX_SESSION_ID } from '@/const/session';
 import { SESSION_CHAT_URL } from '@/const/url';
@@ -19,7 +20,7 @@ const Inbox = memo(() => {
 
   return (
     <Link
-      aria-label={t('inbox.title')}
+      aria-label={t('inbox.title', { agentName: getCompanyInfo().agentInfo.title })}
       href={SESSION_CHAT_URL(INBOX_SESSION_ID, mobile)}
       onClick={(e) => {
         e.preventDefault();
@@ -29,7 +30,7 @@ const Inbox = memo(() => {
       <ListItem
         active={activeId === INBOX_SESSION_ID}
         avatar={DEFAULT_INBOX_AVATAR}
-        title={t('inbox.title')}
+        title={t('inbox.title', { agentName: getCompanyInfo().agentInfo.title })}
       />
     </Link>
   );

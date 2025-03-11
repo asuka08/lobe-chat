@@ -1,5 +1,6 @@
 import { ChatModelCard, ModelProviderCard } from '@/types/llm';
 
+import AgiProvider from './agi';
 import Ai21Provider from './ai21';
 import Ai360Provider from './ai360';
 import AnthropicProvider from './anthropic';
@@ -24,6 +25,7 @@ import LMStudioProvider from './lmstudio';
 import MinimaxProvider from './minimax';
 import MistralProvider from './mistral';
 import MoonshotProvider from './moonshot';
+
 import NovitaProvider from './novita';
 import NvidiaProvider from './nvidia';
 import OllamaProvider from './ollama';
@@ -53,6 +55,7 @@ import ZhiPuProvider from './zhipu';
  * @deprecated
  */
 export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
+  AgiProvider.chatModels,
   OpenAIProvider.chatModels,
   QwenProvider.chatModels,
   ZhiPuProvider.chatModels,
@@ -64,6 +67,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   MinimaxProvider.chatModels,
   MistralProvider.chatModels,
   MoonshotProvider.chatModels,
+  
   OllamaProvider.chatModels,
   VLLMProvider.chatModels,
   OpenRouterProvider.chatModels,
@@ -97,6 +101,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
 ].flat();
 
 export const DEFAULT_MODEL_PROVIDER_LIST = [
+  AgiProvider,
   OpenAIProvider,
   { ...AzureProvider, chatModels: [] },
   AzureAIProvider,
@@ -135,6 +140,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   SenseNovaProvider,
   StepfunProvider,
   MoonshotProvider,
+  
   BaichuanProvider,
   VolcengineProvider,
   MinimaxProvider,
@@ -180,6 +186,7 @@ export { default as LMStudioProviderCard } from './lmstudio';
 export { default as MinimaxProviderCard } from './minimax';
 export { default as MistralProviderCard } from './mistral';
 export { default as MoonshotProviderCard } from './moonshot';
+export { default as AgiProviderCard } from './agi';
 export { default as NovitaProviderCard } from './novita';
 export { default as NvidiaProviderCard } from './nvidia';
 export { default as OllamaProviderCard } from './ollama';

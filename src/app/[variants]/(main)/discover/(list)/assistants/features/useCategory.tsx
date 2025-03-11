@@ -1,23 +1,21 @@
 import { Icon } from '@lobehub/ui';
 import { useTheme } from 'antd-style';
 import {
-  BadgeDollarSignIcon,
   BriefcaseIcon,
-  Coffee,
-  DramaIcon,
-  GamepadIcon,
+  FileTextIcon,
+  GlobeIcon,
   GraduationCapIcon,
   ImageIcon,
-  LanguagesIcon,
-  LaughIcon,
-  Layers,
   LayoutPanelTop,
-  MicroscopeIcon,
-  PencilIcon,
-  PrinterIcon,
-  TerminalSquareIcon,
+  LightbulbIcon,
+  MegaphoneIcon,
+  ScaleIcon,
+  SettingsIcon,
+  UsersIcon,
+  VideoIcon,
+  WalletIcon,
+  WrenchIcon,
 } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 
 import { AssistantCategory } from '@/types/discover';
 
@@ -25,86 +23,88 @@ import { ICON_SIZE } from '../../../components/CategoryMenu';
 
 export const useCategory = (fontsize?: number) => {
   const theme = useTheme();
-
-  const { t } = useTranslation('discover');
-
   const size = fontsize ? { fontSize: fontsize } : ICON_SIZE;
 
   return [
     {
       icon: <Icon color={theme.colorTextSecondary} icon={LayoutPanelTop} size={size} />,
       key: AssistantCategory.All,
-      label: t('category.assistant.all'),
+      label: '全部',
     },
     {
-      icon: <Icon color={theme.colorTextSecondary} icon={MicroscopeIcon} size={size} />,
-      key: AssistantCategory.Academic,
-      label: t('category.assistant.academic'),
+      icon: <Icon color={theme.colorTextSecondary} icon={GlobeIcon} size={size} />,
+      key: AssistantCategory.General,
+      label: '通用',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={FileTextIcon} size={size} />,
+      key: AssistantCategory.CopyWriting,
+      label: '文案',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={LightbulbIcon} size={size} />,
+      key: AssistantCategory.Strategy,
+      label: '战略',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={MegaphoneIcon} size={size} />,
+      key: AssistantCategory.Marketing,
+      label: '市场',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={MegaphoneIcon} size={size} />,
+      key: AssistantCategory.Advertising,
+      label: '营销',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={UsersIcon} size={size} />,
+      key: AssistantCategory.Personnel,
+      label: '人力',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={SettingsIcon} size={size} />,
+      key: AssistantCategory.Administration,
+      label: '行政',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={WalletIcon} size={size} />,
+      key: AssistantCategory.Finance,
+      label: '财务',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={ScaleIcon} size={size} />,
+      key: AssistantCategory.Legal,
+      label: '法务',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={WrenchIcon} size={size} />,
+      key: AssistantCategory.Operations,
+      label: '运营',
     },
     {
       icon: <Icon color={theme.colorTextSecondary} icon={BriefcaseIcon} size={size} />,
-      key: AssistantCategory.Career,
-      label: t('category.assistant.career'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={PencilIcon} size={size} />,
-      key: AssistantCategory.CopyWriting,
-      label: t('category.assistant.copywriting'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={ImageIcon} size={size} />,
-      key: AssistantCategory.Design,
-      label: t('category.assistant.design'),
+      key: AssistantCategory.Technology,
+      label: '技术',
     },
     {
       icon: <Icon color={theme.colorTextSecondary} icon={GraduationCapIcon} size={size} />,
       key: AssistantCategory.Education,
-      label: t('category.assistant.education'),
+      label: '教育',
     },
     {
-      icon: <Icon color={theme.colorTextSecondary} icon={LaughIcon} size={size} />,
-      key: AssistantCategory.Emotions,
-      label: t('category.assistant.emotions'),
+      icon: <Icon color={theme.colorTextSecondary} icon={ImageIcon} size={size} />,
+      key: AssistantCategory.Images,
+      label: '图片',
     },
     {
-      icon: <Icon color={theme.colorTextSecondary} icon={DramaIcon} size={size} />,
+      icon: <Icon color={theme.colorTextSecondary} icon={VideoIcon} size={size} />,
+      key: AssistantCategory.Videos,
+      label: '视频',
+    },
+    {
+      icon: <Icon color={theme.colorTextSecondary} icon={MegaphoneIcon} size={size} />,
       key: AssistantCategory.Entertainment,
-      label: t('category.assistant.entertainment'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={GamepadIcon} size={size} />,
-      key: AssistantCategory.Games,
-      label: t('category.assistant.games'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={Layers} size={size} />,
-      key: AssistantCategory.General,
-      label: t('category.assistant.general'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={Coffee} size={size} />,
-      key: AssistantCategory.Life,
-      label: t('category.assistant.life'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={BadgeDollarSignIcon} size={size} />,
-      key: AssistantCategory.Marketing,
-      label: t('category.assistant.marketing'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={PrinterIcon} size={size} />,
-      key: AssistantCategory.Office,
-      label: t('category.assistant.office'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={TerminalSquareIcon} size={size} />,
-      key: AssistantCategory.Programming,
-      label: t('category.assistant.programming'),
-    },
-    {
-      icon: <Icon color={theme.colorTextSecondary} icon={LanguagesIcon} size={size} />,
-      key: AssistantCategory.Translation,
-      label: t('category.assistant.translation'),
+      label: '娱乐',
     },
   ];
 };

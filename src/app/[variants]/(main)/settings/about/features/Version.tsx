@@ -4,13 +4,12 @@ import Link from 'next/link';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
-
-import { ProductLogo } from '@/components/Branding';
 import { BRANDING_NAME } from '@/const/branding';
-import { CHANGELOG_URL, MANUAL_UPGRADE_URL, OFFICIAL_SITE } from '@/const/url';
+import { CHANGELOG_URL, MANUAL_UPGRADE_URL } from '@/const/url';
 import { CURRENT_VERSION } from '@/const/version';
 import { useNewVersion } from '@/features/User/UserPanel/useNewVersion';
 import { useGlobalStore } from '@/store/global';
+import Image from 'next/image';
 
 const useStyles = createStyles(({ css, token }) => ({
   logo: css`
@@ -36,11 +35,22 @@ const Version = memo<{ mobile?: boolean }>(({ mobile }) => {
       width={'100%'}
     >
       <Flexbox align={'center'} flex={'none'} gap={16} horizontal>
-        <Link href={OFFICIAL_SITE} target={'_blank'}>
+        {/* 隐藏头像跳转到lobehub */}
+        {/* <Link href={OFFICIAL_SITE} target={'_blank'}>
           <Center className={styles.logo} height={64} width={64}>
             <ProductLogo size={52} />
           </Center>
-        </Link>
+        </Link> */}
+        <Center className={styles.logo} height={64} width={64}>
+          <Image 
+            alt={BRANDING_NAME}
+            height={52}
+            src="/icons/icon-192x192.maskable.png"
+            style={{ objectFit: 'contain' }}
+            width={52}
+          />
+        </Center>
+
         <Flexbox>
           <div style={{ fontSize: 18, fontWeight: 'bolder' }}>{BRANDING_NAME}</div>
           <div>

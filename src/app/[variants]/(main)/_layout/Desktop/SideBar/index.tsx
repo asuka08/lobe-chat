@@ -10,7 +10,6 @@ import { systemStatusSelectors } from '@/store/global/selectors';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 
 import Avatar from './Avatar';
-import BottomActions from './BottomActions';
 import PinList from './PinList';
 import TopActions from './TopActions';
 
@@ -29,7 +28,8 @@ const Nav = memo(() => {
     !inZenMode && (
       <SideNav
         avatar={<Avatar />}
-        bottomActions={<BottomActions />}
+        // 隐藏底部actions => lobe的github 和 使用文档 的跳转入口
+        // bottomActions={<BottomActions />}
         style={{ height: '100%', zIndex: 100 }}
         topActions={
           <Suspense>
