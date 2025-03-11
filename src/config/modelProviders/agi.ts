@@ -7,11 +7,11 @@ const Agi: ModelProviderCard = {
     {
       contextWindowTokens: 128_000,
       description:
-        'agi 4o',
-      displayName: 'Agi-4o',
+        'agi general',
+      displayName: 'agi-general',
       enabled: true,
       functionCall: true,
-      id: 'agi-4o',
+      id: 'agi-general',
       vision: true,
     },
     {
@@ -62,9 +62,9 @@ const Agi: ModelProviderCard = {
       id: 'agi-deepseek-r1',
     },
   ],
-  checkModel: 'agi-4o',
+  checkModel: 'agi-general',
   description:
-    'agi 4o',
+    'agi general',
   id: 'agi',
   modelList: { showModelFetcher: true },
   modelsUrl: 'https://syngents.cn',

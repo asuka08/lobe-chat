@@ -325,10 +325,10 @@ const higressChatModels: AIChatModelCard[] = [
     },
     contextWindowTokens: 128_000,
     description:
-      'agi 4o',
-    displayName: 'agi 4o',
+      'agi general',
+    displayName: 'agi-general',
     enabled: true,
-    id: 'agi-4o',
+    id: 'agi-general',
     type: 'chat',
   },
   {

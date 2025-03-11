@@ -278,11 +278,11 @@ const Higress: ModelProviderCard = {
     {
       contextWindowTokens: 128_000,
       description:
-        'Agi 4o',
-      displayName: 'Agi 4o',
+        'Agi general',
+      displayName: 'agi-general',
       enabled: true,
       functionCall: true,
-      id: 'agi-4o',
+      id: 'agi-general',
     },
     //百川智能
     {
