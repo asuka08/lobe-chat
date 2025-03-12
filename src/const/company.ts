@@ -59,12 +59,12 @@ export const COMPANY_INFO = {
       url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/starkitchen-os/icons/icon-agent.png',
     },
     companyName: '星座厨房',
-    customAgentInfo: {
-      avator:
-        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
-      title: '星厨百科',
-      url: 'https://workflow.syngents.cn/chat/3RLIbRp8cGELaLAe',
-    },
+    // customAgentInfo: {
+    //   avator:
+    //     'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
+    //   title: '星厨百科',
+    //   url: 'https://workflow.syngents.cn/chat/3RLIbRp8cGELaLAe',
+    // },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/starkitchen-os/icons/icon-192x192.png',
   },
   syn: {
