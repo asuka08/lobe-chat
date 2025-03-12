@@ -12,7 +12,7 @@ export const COMPANY_INFO = {
       title: '确小幸',
       url: '/icons/icon-quexiaoxing.png',
     },
-    companyName: 'AGI Transformer',
+    companyName: '超级助理',
     logo: '/icons/icon-192x192.png',
   },
   demo: {
