@@ -37,11 +37,11 @@ const Agi: ModelProviderCard = {
     {
       contextWindowTokens: 128_000,
       description:
-        'agi sonnet 3.7',
-      displayName: 'agi-sonnet-3-7',
+        'Agi pro',
+      displayName: 'agi-pro',
       enabled: true,
       functionCall: true,
-      id: 'agi-sonnet-3-7',
+      id: 'agi-pro',
       vision: true,
     },
     {
