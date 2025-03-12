@@ -21,6 +21,12 @@ export const COMPANY_INFO = {
       url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-agent.png',
     },
     companyName: '测试',
+    customAgentInfo: {
+      avator:
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
+      title: '测试百科',
+      url: 'https://workflow.syngents.cn/chat/3RLIbRp8cGELaLAe',
+    },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-192x192.png',
   },
   fenxiang: {
