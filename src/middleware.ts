@@ -92,7 +92,14 @@ const defaultMiddleware = (request: NextRequest) => {
 
   url.pathname = nextPathname;
 
-  return NextResponse.rewrite(url, { status: 200 });
+  // 添加自定义请求头
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-pathname', request.nextUrl.pathname);
+
+  return NextResponse.rewrite(url, {
+    headers: requestHeaders,
+    status: 200,
+  });
 };
 
 // Initialize an Edge compatible NextAuth middleware
