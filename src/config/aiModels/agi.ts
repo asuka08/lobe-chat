@@ -62,10 +62,10 @@ const agiChatModels: AIChatModelCard[] = [
     },
     contextWindowTokens: 200_000,
     description:
-      'agi sonnet 3.7',
-    displayName: 'agi-sonnet-3-7',
+      'Agi pro',
+    displayName: 'agi-pro',
     enabled: true,
-    id: 'agi-sonnet-3-7',
+    id: 'agi-pro',
     pricing: {
       currency: 'CNY',
       input: 12,
