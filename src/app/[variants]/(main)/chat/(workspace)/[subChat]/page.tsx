@@ -2,9 +2,9 @@
 
 import { Result, Spin } from 'antd';
 import { useSearchParams } from 'next/navigation';
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const CustomChatPage: FC<{ params: { subChat: string } }> = ({ params }) => {
+const CustomChatPage = () => {
   const searchParams = useSearchParams();
   const url = searchParams.get('url');
   const [iframeUrl, setIframeUrl] = useState<string>('');
@@ -35,11 +35,12 @@ const CustomChatPage: FC<{ params: { subChat: string } }> = ({ params }) => {
   }, [url]);
 
   return (
-    <div style={{ height: '100%', position: 'relative', width: '100%' }}>
+    <div style={{ height: '100%', position: 'absolute', top: 0, width: '100%', zIndex: 100 }}>
       {loading ? (
         <div
           style={{
             alignItems: 'center',
+            backgroundColor: '#fff',
             display: 'flex',
             height: '100%',
             justifyContent: 'center',
@@ -52,6 +53,7 @@ const CustomChatPage: FC<{ params: { subChat: string } }> = ({ params }) => {
         <div
           style={{
             alignItems: 'center',
+            backgroundColor: '#fff',
             display: 'flex',
             height: '100%',
             justifyContent: 'center',
@@ -67,6 +69,7 @@ const CustomChatPage: FC<{ params: { subChat: string } }> = ({ params }) => {
           sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           src={iframeUrl}
           style={{
+            backgroundColor: '#fff',
             border: 'none',
             height: '100%',
             width: '100%',

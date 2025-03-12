@@ -23,10 +23,12 @@ const Inbox = memo(() => {
   const pathname = usePathname();
   const isInCustom = pathname?.includes('/customChat');
 
+  const currentCompanyInfo: any = getCompanyInfo();
+
   return (
     <>
       <Link
-        aria-label={t('inbox.title', { agentName: getCompanyInfo().agentInfo.title })}
+        aria-label={t('inbox.title', { agentName: currentCompanyInfo.agentInfo.title })}
         href={SESSION_CHAT_URL(INBOX_SESSION_ID, mobile)}
         onClick={(e) => {
           e.preventDefault();
@@ -36,20 +38,26 @@ const Inbox = memo(() => {
         <ListItem
           active={activeId === INBOX_SESSION_ID && !isInCustom}
           avatar={DEFAULT_INBOX_AVATAR}
-          title={t('inbox.title', { agentName: getCompanyInfo().agentInfo.title })}
+          title={t('inbox.title', { agentName: currentCompanyInfo.agentInfo.title })}
         />
       </Link>
       {/* flag */}
-      <Link
-        aria-label="外部网站"
-        href={CUSTOM_CHAT_URL('https://workflow.syngents.cn/workflow/x1Ef4fJHqZmagWBV')}
-        onClick={(e) => {
-          e.preventDefault();
-          router.push(CUSTOM_CHAT_URL('https://workflow.syngents.cn/workflow/x1Ef4fJHqZmagWBV'));
-        }}
-      >
-        <ListItem active={isInCustom} avatar="🌐" title="拓展对话" />
-      </Link>
+      {currentCompanyInfo.customAgentInfo && (
+        <Link
+          aria-label="外部网站"
+          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo.url)}
+          onClick={(e) => {
+            e.preventDefault();
+            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo.url));
+          }}
+        >
+          <ListItem
+            active={isInCustom}
+            avatar={currentCompanyInfo.customAgentInfo.avator}
+            title={currentCompanyInfo.customAgentInfo.title}
+          />
+        </Link>
+      )}
     </>
   );
 });

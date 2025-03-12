@@ -92,12 +92,7 @@ const defaultMiddleware = (request: NextRequest) => {
 
   url.pathname = nextPathname;
 
-  // 添加自定义请求头
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set('x-pathname', request.nextUrl.pathname);
-
   return NextResponse.rewrite(url, {
-    headers: requestHeaders,
     status: 200,
   });
 };
