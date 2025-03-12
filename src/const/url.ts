@@ -58,6 +58,12 @@ export const SESSION_CHAT_URL = (id: string = INBOX_SESSION_ID, mobile?: boolean
     url: '/chat',
   });
 
+export const CUSTOM_CHAT_URL = (url: string) =>
+  qs.stringifyUrl({
+    query: { url },
+    url: '/chat/customChat',
+  });
+
 export const imageUrl = (filename: string) => withBasePath(`/images/${filename}`);
 
 export const LOBE_URL_IMPORT_NAME = 'settings';
