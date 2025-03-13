@@ -28,6 +28,6 @@ export const useSwitchSession = () => {
         }, 50);
       }
     },
-    [mobile],
+    [mobile, pathname],
   );
 };

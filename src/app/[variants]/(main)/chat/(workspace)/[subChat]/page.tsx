@@ -12,7 +12,7 @@ const CustomChatPage = () => {
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    console.log('原始 URL:', url);
+    // console.log('原始 URL:', url);
     setLoading(true);
     setError('');
 
@@ -24,7 +24,7 @@ const CustomChatPage = () => {
 
     try {
       const decodedUrl = decodeURIComponent(url);
-      console.log('解码后的 URL:', decodedUrl);
+      // console.log('解码后的 URL:', decodedUrl);
       setIframeUrl(decodedUrl);
     } catch (error) {
       console.error('URL解析错误:', error);
