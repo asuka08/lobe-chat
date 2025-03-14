@@ -1,12 +1,5 @@
 export const COMPANY_INFO = {
-  bohua: {
-    agentInfo: {
-      title: '博小华',
-      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/bohua-os/icons/icon-agent.png',
-    },
-    companyName: '博华物流',
-    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/bohua-os/icons/icon-192x192.png',
-  },
+
   default: {
     agentInfo: {
       title: '确小幸',
@@ -15,6 +8,18 @@ export const COMPANY_INFO = {
     companyName: '超级助理',
     logo: '/icons/icon-192x192.png',
   },
+
+  // 新智
+  syn: {
+    agentInfo: {
+      title: '新小智',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syn-os/icons/icon-agent.png',
+    },
+    companyName: '新智体',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syn-os/icons/icon-192x192.png',
+  },
+
+  // 测试
   demo: {
     agentInfo: {
       title: '测试',
@@ -29,6 +34,22 @@ export const COMPANY_INFO = {
     },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-192x192.png',
   },
+
+
+
+  // 博华物流
+  bohua: {
+    agentInfo: {
+      title: '博小华',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/bohua-os/icons/icon-agent.png',
+    },
+    companyName: '博华物流',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/bohua-os/icons/icon-192x192.png',
+  },
+
+
+
+  // 芬香
   fenxiang: {
     agentInfo: {
       title: '芬小香',
@@ -37,6 +58,8 @@ export const COMPANY_INFO = {
     companyName: '芬香',
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/fenxiang-os/icons/icon-192x192.png',
   },
+
+  // 立购
   lig: {
     agentInfo: {
       title: '立小购',
@@ -45,6 +68,8 @@ export const COMPANY_INFO = {
     companyName: '立购',
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/lig-os/icons/icon-192x192.png',
   },
+
+  // 朗丽兹
   palace: {
     agentInfo: {
       title: '朗小兹',
@@ -53,6 +78,8 @@ export const COMPANY_INFO = {
     companyName: '朗丽兹',
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-192x192.png',
   },
+
+  // 星座厨房
   starkitchen: {
     agentInfo: {
       title: '星小厨',
@@ -67,14 +94,37 @@ export const COMPANY_INFO = {
     },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/starkitchen-os/icons/icon-192x192.png',
   },
-  syn: {
+
+  // 易宝
+  yeepay: {
     agentInfo: {
-      title: '新小智',
-      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syn-os/icons/icon-agent.png',
+      title: '易小宝',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/yeepay-os/icons/icon-agent.png',
     },
-    companyName: '新智体',
-    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syn-os/icons/icon-192x192.png',
+    companyName: '易宝',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/yeepay-os/icons/icon-192x192.png',
   },
+
+  // 悠家
+  ucharm: {
+    agentInfo: {
+      title: '小悠',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/ucharm-os/icons/icon-agent.png',
+    },
+    companyName: '悠家',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/ucharm-os/icons/icon-192x192.png',
+  },
+
+  // 陆运帮
+  sxlyb: {
+    agentInfo: {
+      title: '陆小帮',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/sxlyb-os/icons/icon-agent.png',
+    },
+    companyName: '陆运帮',
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/sxlyb-os/icons/icon-192x192.png',
+  },
+
 };
 
 // 定义 COMPANY_INFO 键的类型
