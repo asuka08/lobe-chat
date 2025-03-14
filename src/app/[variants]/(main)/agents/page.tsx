@@ -110,7 +110,7 @@ const AgentsContent = () => {
   return (
     <Flexbox className={cx(styles.container)} direction={'vertical'} width={'100%'}>
       <Header />
-      <Flexbox direction={'horizontal'} width={'100%'}>
+      <Flexbox direction={'horizontal'} flex={1} style={{ overflowY: 'auto' }} width={'100%'}>
         <Menu selectedKey={selectedKey} topicList={topicList} />
         <AgentsCards agentsList={agentsList} />
       </Flexbox>
