@@ -54,7 +54,12 @@ const AgentsContent = () => {
   }, [searchParams]);
 
   useEffect(() => {
-    post('/assistant/topic/list/v2').then((res: any) => {
+    post('/assistant/topic/list/v3', {
+      company_name:
+        typeof window !== 'undefined'
+          ? window.location.href.match(/^https:\/\/(.*?)-os\.syngents\.cn/)?.[1] || 'default'
+          : 'default',
+    }).then((res: any) => {
       const AllIcon = getIconByKey('全部');
       // 为每个菜单项添加图标
       const processedList = res.map((category: any) => {
@@ -89,7 +94,11 @@ const AgentsContent = () => {
 
   useEffect(() => {
     const topic = selectedKey === 'all' ? undefined : selectedKey;
-    post('/assistant/list_by_topic', {
+    post('/assistant/list_by_topic/v2', {
+      company_name:
+        typeof window !== 'undefined'
+          ? window.location.href.match(/^https:\/\/(.*?)-os\.syngents\.cn/)?.[1] || 'default'
+          : 'default',
       page_number: 1,
       page_size: 100,
       topic,
