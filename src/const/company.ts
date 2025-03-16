@@ -125,6 +125,22 @@ export const COMPANY_INFO = {
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/sxlyb-os/icons/icon-192x192.png',
   },
 
+  // 必诚
+  bicheng: {
+    agentInfo: {
+      title: '必小诚',
+      url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/bicheng-os/icons/icon-agent.png',
+    },
+    companyName: '山东必诚',
+    customAgentInfo: {
+      avator:
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
+      title: '必诚百科',
+      url: 'https://workflow.syngents.cn/chat/J1jVcjUTyEfkNbTP',
+    },
+    logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/bicheng-os/icons/icon-192x192.png',
+  },
+
 };
 
 // 定义 COMPANY_INFO 键的类型
