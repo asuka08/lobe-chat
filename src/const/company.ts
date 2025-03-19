@@ -106,7 +106,7 @@ export const COMPANY_INFO = {
       avator:
         'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
       title: '易宝百科',
-      url: 'https://workflow.syngents.cn/chat/J1jVcjUTyEfkNbTP',
+      url: 'https://workflow.syngents.cn/chat/MyYK4rrLjxbVHXdM',
     },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/yeepay-os/icons/icon-192x192.png',
   },
