@@ -112,6 +112,12 @@ export const COMPANY_INFO = {
       url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/ucharm-os/icons/icon-agent.png',
     },
     companyName: '悠家',
+    customAgentInfo: {
+      avator:
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
+      title: '易宝百科',
+      url: 'https://workflow.syngents.cn/chat/J1jVcjUTyEfkNbTP',
+    },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/ucharm-os/icons/icon-192x192.png',
   },
 
