@@ -147,6 +147,22 @@ export const COMPANY_INFO = {
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/bicheng-os/icons/icon-192x192.png',
   },
 
+    // 奇趣
+    qqds: {
+      agentInfo: {
+        title: '米娃',
+        url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/qqds-os/icons/icon-agent.png',
+      },
+      companyName: '奇趣',
+      customAgentInfo: {
+        avator:
+          'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
+        title: '奇趣百科',
+        url: 'https://workflow.syngents.cn/chat/jh7ebOOihcDMXmTn',
+      },
+      logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/qqds-os/icons/icon-192x192.png',
+    },
+
 };
 
 // 定义 COMPANY_INFO 键的类型
