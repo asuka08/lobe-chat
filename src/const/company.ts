@@ -6,6 +6,12 @@ export const COMPANY_INFO = {
       url: '/icons/icon-quexiaoxing.png',
     },
     companyName: '超级助理',
+    customAgentInfo: {
+      avator:
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
+      title: '新智百科',
+      url: 'https://workflow.syngents.cn/chat/WuMwQcV7qYwwu8Lm',
+    },
     logo: '/icons/icon-192x192.png',
   },
 
