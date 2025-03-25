@@ -16,6 +16,12 @@ export const COMPANY_INFO = {
       url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syn-os/icons/icon-agent.png',
     },
     companyName: '新智体',
+    customAgentInfo: {
+      avator:
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
+      title: '新智百科',
+      url: 'https://workflow.syngents.cn/chat/WuMwQcV7qYwwu8Lm',
+    },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/syn-os/icons/icon-192x192.png',
   },
 
