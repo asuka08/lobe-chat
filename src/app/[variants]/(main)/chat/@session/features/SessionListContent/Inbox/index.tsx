@@ -58,6 +58,77 @@ const Inbox = memo(() => {
           />
         </Link>
       )}
+
+      {currentCompanyInfo.customAgentInfo2 && (
+        <Link
+          aria-label="外部网站"
+          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo2.url)}
+          onClick={(e) => {
+            e.preventDefault();
+            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo2.url));
+          }}
+        >
+          <ListItem
+            active={isInCustom}
+            avatar={currentCompanyInfo.customAgentInfo2.avator}
+            title={currentCompanyInfo.customAgentInfo2.title}
+          />
+        </Link>
+      )}
+
+
+      {currentCompanyInfo.customAgentInfo3 && (
+        <Link
+          aria-label="外部网站"
+          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo3.url)}
+          onClick={(e) => {
+            e.preventDefault();
+            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo3.url));
+          }}
+        >
+          <ListItem
+            active={isInCustom}
+            avatar={currentCompanyInfo.customAgentInfo3.avator}
+            title={currentCompanyInfo.customAgentInfo3.title}
+          />
+        </Link>
+      )}
+
+
+      {currentCompanyInfo.customAgentInfo4 && (
+        <Link
+          aria-label="外部网站"
+          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo4.url)}
+          onClick={(e) => {
+            e.preventDefault();
+            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo4.url));
+          }}
+        >
+          <ListItem
+            active={isInCustom}
+            avatar={currentCompanyInfo.customAgentInfo4.avator}
+            title={currentCompanyInfo.customAgentInfo4.title}
+          />
+        </Link>
+      )}
+
+
+      {currentCompanyInfo.customAgentInfo5 && (
+        <Link
+          aria-label="外部网站"
+          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo5.url)}
+          onClick={(e) => {
+            e.preventDefault();
+            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo5.url));
+          }}
+        >
+          <ListItem
+            active={isInCustom}
+            avatar={currentCompanyInfo.customAgentInfo5.avator}
+            title={currentCompanyInfo.customAgentInfo5.title}
+          />
+        </Link>
+      )}
     </>
   );
 });
