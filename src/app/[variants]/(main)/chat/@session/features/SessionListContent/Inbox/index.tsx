@@ -52,7 +52,7 @@ const Inbox = memo(() => {
           }}
         >
           <ListItem
-            active={isInCustom}
+            active={isInCustom && pathname?.includes(currentCompanyInfo.customAgentInfo.url.slice(-10))}
             avatar={currentCompanyInfo.customAgentInfo.avator}
             title={currentCompanyInfo.customAgentInfo.title}
           />
@@ -69,7 +69,7 @@ const Inbox = memo(() => {
           }}
         >
           <ListItem
-            active={isInCustom}
+            active={isInCustom && pathname?.includes(currentCompanyInfo.customAgentInfo2.url.slice(-10))}
             avatar={currentCompanyInfo.customAgentInfo2.avator}
             title={currentCompanyInfo.customAgentInfo2.title}
           />
@@ -87,7 +87,7 @@ const Inbox = memo(() => {
           }}
         >
           <ListItem
-            active={isInCustom}
+            active={isInCustom && pathname?.includes(currentCompanyInfo.customAgentInfo3.url.slice(-10))}
             avatar={currentCompanyInfo.customAgentInfo3.avator}
             title={currentCompanyInfo.customAgentInfo3.title}
           />
@@ -105,7 +105,7 @@ const Inbox = memo(() => {
           }}
         >
           <ListItem
-            active={isInCustom}
+            active={isInCustom && pathname?.includes(currentCompanyInfo.customAgentInfo4.url.slice(-10))}
             avatar={currentCompanyInfo.customAgentInfo4.avator}
             title={currentCompanyInfo.customAgentInfo4.title}
           />
@@ -123,7 +123,7 @@ const Inbox = memo(() => {
           }}
         >
           <ListItem
-            active={isInCustom}
+            active={isInCustom && pathname?.includes(currentCompanyInfo.customAgentInfo5.url.slice(-10))}
             avatar={currentCompanyInfo.customAgentInfo5.avator}
             title={currentCompanyInfo.customAgentInfo5.title}
           />
