@@ -59,7 +59,8 @@ const TopActions = memo<TopActionProps>(({ tab, isPinned }) => {
           />
         </Link>
       )}
-      {showMarket && (
+      
+      {/* {showMarket && ( 
         <Link aria-label={t('tab.discover')} href={'/discover'}>
           <ActionIcon
             active={tab === SidebarTabKey.Discover}
@@ -69,7 +70,7 @@ const TopActions = memo<TopActionProps>(({ tab, isPinned }) => {
             title={t('tab.discover')}
           />
         </Link>
-      )}
+      )} */}
       {canAccessAgents && (
         <Link aria-label={t('tab.chat')} href={'/agents'}>
           <ActionIcon
