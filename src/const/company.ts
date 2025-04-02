@@ -62,12 +62,6 @@ export const COMPANY_INFO = {
       title: '测试百科4',
       url: 'https://workflow.syngents.cn/chat/3RLIbRp8cGELaLAe',
     },
-    customAgentInfo5: {
-      avator:
-        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
-      title: '测试百科5',
-      url: 'https://workflow.syngents.cn/chat/3RLIbRp8cGELaLAe',
-    },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-192x192.png',
   },
 
