@@ -140,25 +140,25 @@ export const COMPANY_INFO = {
     },
     customAgentInfo2: {
       avator:
-        'https://api.dicebear.com/7.x/bottts/svg?seed=40',
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f50d.webp',
       title: '行业痛点分析',
       url: 'https://workflow.syngents.cn/chat/QR2T1wOdP1CTksLK',
     },
     customAgentInfo3: {
       avator:
-        'https://api.dicebear.com/7.x/bottts/svg?seed=46',
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/1.1.0/files/assets/1f3af.webp',
       title: '客户需求洞察',
       url: 'https://workflow.syngents.cn/chat/s93ixmODJm8sxI9j',
     },
     customAgentInfo4: {
       avator:
-        'https://api.dicebear.com/7.x/bottts/svg?seed=17',
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f4ac.webp',
       title: '销售话术定制',
       url: 'https://workflow.syngents.cn/chat/M9hTHanI641ymF2N',
     },
     customAgentInfo5: {
       avator:
-        'https://api.dicebear.com/7.x/bottts/svg?seed=14',
+        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f9e9.webp',
       title: '个性化方案生成',
       url: 'https://workflow.syngents.cn/chat/JmD8PVDL1ajQKkvW',
     },
