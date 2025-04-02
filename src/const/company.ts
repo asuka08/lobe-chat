@@ -46,21 +46,21 @@ export const COMPANY_INFO = {
     },
     customAgentInfo2: {
       avator:
-        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
-      title: '测试百科2',
-      url: 'https://workflow.syngents.cn/chat/3RLIbRp8cGELaLAe',
+        'https://api.dicebear.com/7.x/bottts/svg?seed=40',
+      title: '行业痛点分析',
+      url: 'https://workflow.syngents.cn/chat/QR2T1wOdP1CTksLK',
     },
     customAgentInfo3: {
       avator:
-        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
-      title: '测试百科3',
-      url: 'https://workflow.syngents.cn/chat/3RLIbRp8cGELaLAe',
+        'https://api.dicebear.com/7.x/bottts/svg?seed=46',
+      title: '客户需求洞察',
+      url: 'https://workflow.syngents.cn/chat/s93ixmODJm8sxI9j',
     },
     customAgentInfo4: {
       avator:
-        'https://registry.npmmirror.com/@lobehub/fluent-emoji-3d/latest/files/assets/1f389.webp',
-      title: '测试百科4',
-      url: 'https://workflow.syngents.cn/chat/3RLIbRp8cGELaLAe',
+        'https://api.dicebear.com/7.x/bottts/svg?seed=17',
+      title: '销售话术定制',
+      url: 'https://workflow.syngents.cn/chat/M9hTHanI641ymF2N',
     },
     logo: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/palace-os/icons/icon-192x192.png',
   },
