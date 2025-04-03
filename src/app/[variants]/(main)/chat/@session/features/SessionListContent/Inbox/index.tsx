@@ -45,10 +45,10 @@ const Inbox = memo(() => {
       {currentCompanyInfo.customAgentInfo && (
         <Link
           aria-label="外部网站"
-          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo.url)}
+          href={mobile ? currentCompanyInfo.customAgentInfo.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo.url)}
           onClick={(e) => {
             e.preventDefault();
-            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo.url));
+            router.push(mobile ? currentCompanyInfo.customAgentInfo.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo.url));
           }}
         >
           <ListItem
