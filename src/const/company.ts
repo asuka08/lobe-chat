@@ -128,7 +128,7 @@ export const COMPANY_INFO = {
   // 易宝
   yeepay: {
     agentInfo: {
-      title: '易小宝',
+      title: '超级助理',
       url: 'https://lobe-1321707147.cos.ap-beijing.myqcloud.com/tanent/yeepay-os/icons/icon-agent.png',
     },
     companyName: '易宝',
