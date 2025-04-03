@@ -7,6 +7,17 @@ const Agi: ModelProviderCard = {
     {
       contextWindowTokens: 128_000,
       description:
+        'Agi pro',
+      displayName: 'agi-pro',
+      enabled: true,
+      functionCall: true,
+      id: 'agi-pro',
+      vision: true,
+    },
+    
+    {
+      contextWindowTokens: 128_000,
+      description:
         'agi general',
       displayName: 'agi-general',
       enabled: true,
@@ -34,16 +45,7 @@ const Agi: ModelProviderCard = {
       id: 'agi-sonnet-3-5',
       vision: true,
     },
-    {
-      contextWindowTokens: 128_000,
-      description:
-        'Agi pro',
-      displayName: 'agi-pro',
-      enabled: true,
-      functionCall: true,
-      id: 'agi-pro',
-      vision: true,
-    },
+
     {
       contextWindowTokens: 128_000,
       description:

@@ -1,6 +1,26 @@
 import { AIChatModelCard } from '@/types/aiModel';
 
 const agiChatModels: AIChatModelCard[] = [
+  
+  {
+    abilities: {
+      functionCall: true,
+      vision: true,
+    },
+    contextWindowTokens: 200_000,
+    description:
+      'Agi pro',
+    displayName: 'agi-pro',
+    enabled: true,
+    id: 'agi-pro',
+    pricing: {
+      currency: 'CNY',
+      input: 12,
+      output: 12,
+    },
+    type: 'chat',
+  },
+  
   {
     abilities: {
       functionCall: true,
@@ -55,24 +75,7 @@ const agiChatModels: AIChatModelCard[] = [
     },
     type: 'chat',
   },
-  {
-    abilities: {
-      functionCall: true,
-      vision: true,
-    },
-    contextWindowTokens: 200_000,
-    description:
-      'Agi pro',
-    displayName: 'agi-pro',
-    enabled: true,
-    id: 'agi-pro',
-    pricing: {
-      currency: 'CNY',
-      input: 12,
-      output: 12,
-    },
-    type: 'chat',
-  },
+
   {
     abilities: {
       // functionCall: true,
