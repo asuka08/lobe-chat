@@ -62,10 +62,10 @@ const Inbox = memo(() => {
       {currentCompanyInfo.customAgentInfo2 && (
         <Link
           aria-label="外部网站"
-          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo2.url)}
+          href={mobile ? currentCompanyInfo.customAgentInfo2.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo2.url)}
           onClick={(e) => {
             e.preventDefault();
-            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo2.url));
+            router.push(mobile ? currentCompanyInfo.customAgentInfo2.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo2.url));
           }}
         >
           <ListItem
@@ -80,10 +80,10 @@ const Inbox = memo(() => {
       {currentCompanyInfo.customAgentInfo3 && (
         <Link
           aria-label="外部网站"
-          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo3.url)}
+          href={mobile ? currentCompanyInfo.customAgentInfo3.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo3.url)}
           onClick={(e) => {
             e.preventDefault();
-            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo3.url));
+            router.push(mobile ? currentCompanyInfo.customAgentInfo3.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo3.url));
           }}
         >
           <ListItem
@@ -98,10 +98,10 @@ const Inbox = memo(() => {
       {currentCompanyInfo.customAgentInfo4 && (
         <Link
           aria-label="外部网站"
-          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo4.url)}
+          href={mobile ? currentCompanyInfo.customAgentInfo4.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo4.url)}
           onClick={(e) => {
             e.preventDefault();
-            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo4.url));
+            router.push(mobile ? currentCompanyInfo.customAgentInfo4.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo4.url));
           }}
         >
           <ListItem
@@ -112,14 +112,13 @@ const Inbox = memo(() => {
         </Link>
       )}
 
-
       {currentCompanyInfo.customAgentInfo5 && (
         <Link
           aria-label="外部网站"
-          href={CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo5.url)}
+          href={mobile ? currentCompanyInfo.customAgentInfo5.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo5.url)}
           onClick={(e) => {
             e.preventDefault();
-            router.push(CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo5.url));
+            router.push(mobile ? currentCompanyInfo.customAgentInfo5.url :CUSTOM_CHAT_URL(currentCompanyInfo.customAgentInfo5.url));
           }}
         >
           <ListItem
